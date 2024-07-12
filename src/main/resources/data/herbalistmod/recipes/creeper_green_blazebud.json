@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "herbalistmod:creeper_green_blazebud_stalk"
+    }
+  ],
+  "result": {
+    "item": "herbalistmod:creeper_green_blazebud",
+    "count": 3
+  }
+} 

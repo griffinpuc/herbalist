@@ -1,0 +1,66 @@
+{
+  "creativetab.herbalistmod": "Herbalist",
+
+  "item.herbalistmod.music_disc_tropic_herb": "Tropic Herb Music Disc",
+  "item.herbalistmod.music_disc_tropic_herb.desc": "David Robson - Tropic Herb",
+
+  "item.herbalistmod.blunt": "Blazebud Cigar",
+  "item.herbalistmod.blazebud_cigarette": "Blazebud Cigarette",
+  "item.herbalistmod.spliff": "Blazebud Tobacco Cigarette",
+
+  "item.herbalistmod.rolling_paper": "Rolling Paper",
+
+  "item.herbalistmod.blazebud_brownie": "Blazebud Brownie",
+  "item.herbalistmod.blazebud_cookie": "Blazebud Cookie",
+  "item.herbalistmod.blazebud_cake": "Blazebud Cake",
+
+  "item.herbalistmod.enderpearl_haze_blazebud": "Blazebud",
+  "item.herbalistmod.redstone_kush_blazebud": "Blazebud",
+  "item.herbalistmod.creeper_green_blazebud": "Blazebud",
+  "item.herbalistmod.emerald_dream_blazebud": "Blazebud",
+  "item.herbalistmod.blockhead_blue_blazebud": "Blazebud",
+  "item.herbalistmod.netherwart_kush_blazebud": "Blazebud",
+
+  "item.herbalistmod.enderpearl_haze_blazebud_stalk": "Blazebud Stalk",
+  "item.herbalistmod.redstone_kush_blazebud_stalk": "Blazebud Stalk",
+  "item.herbalistmod.creeper_green_blazebud_stalk": "Blazebud Stalk",
+  "item.herbalistmod.emerald_dream_blazebud_stalk": "Blazebud Stalk",
+  "item.herbalistmod.blockhead_blue_blazebud_stalk": "Blazebud Stalk",
+  "item.herbalistmod.netherwart_kush_blazebud_stalk": "Blazebud Stalk",
+
+
+  "item.herbalistmod.enderpearl_haze_seeds": "Enderpearl Haze Blazebud Seeds",
+  "item.herbalistmod.redstone_kush_seeds": "Redstone Kush Blazebud Seeds",
+  "item.herbalistmod.creeper_green_seeds": "Creeper Green Blazebud Seeds",
+  "item.herbalistmod.emerald_dream_seeds": "Emerald Dream Blazebud Seeds",
+  "item.herbalistmod.blockhead_blue_seeds": "Blockead Blue Blazebud Seeds",
+  "item.herbalistmod.netherwart_kush_seeds": "Netherwart Kush Blazebud Seeds",
+
+  "block.herbalistmod.enderpearl_haze_blazebud_crop": "Enderpearl Haze Crop",
+  "block.herbalistmod.redstone_kush_blazebud_crop": "Redstone Kush Crop",
+  "block.herbalistmod.creeper_green_blazebud_crop": "Creeper Green Crop",
+  "block.herbalistmod.emerald_dream_blazebud_crop": "Emerald Dream Crop",
+  "block.herbalistmod.blockhead_blue_blazebud_crop": "Blockead Blue Crop",
+  "block.herbalistmod.netherwart_kush_blazebud_crop": "Netherwart Kush Crop",
+
+  "block.herbalistmod.extraction_station": "Extraction Station",
+
+  "item.herbalistmod.dreamcap_mushroom": "Dreamcap Mushoom",
+  "item.herbalistmod.ethereal_fungus": "Ethereal Fungus",
+  "item.herbalistmod.mirage_cactus": "Mirage Cactus",
+  "item.herbalistmod.ethereal_extract": "Ethereal Extract",
+  "item.herbalistmod.ethereal_dust": "Ethereal Dust",
+  "item.herbalistmod.chorus_extract": "Chorus Extract",
+  "item.herbalistmod.mirage_cactus_extract": "Mirage Cactus Extract",
+  "item.herbalistmod.suspicious_extract": "Suspicious Extract",
+  "item.herbalistmod.mirage_extract": "Mirage Extract",
+  "item.herbalistmod.chorus_dust": "Chorus Dust",
+  "item.herbalistmod.suspicious_dust": "Suspicious Dust",
+  "item.herbalistmod.mirage_dust": "Mirage Dust",
+
+  "effect.herbalistmod.blazed": "Blazed",
+  "effect.herbalistmod.introspection": "Introspection",
+  "effect.herbalistmod.delirium": "Delirium",
+  "effect.herbalistmod.desert_vision": "Desert Vision"
+
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+      {
+        "item": "herbalistmod:redstone_kush_blazebud_stalk"
+      }
+  ],
+  "result": {
+    "item": "herbalistmod:redstone_kush_blazebud",
+    "count": 3
+  }
+} 

@@ -1,0 +1,53 @@
+{
+  "type": "herbalistmod:crafting_special_blunt",
+  "ingredients": [
+    {
+      "item": "herbalistmod:rolling_paper"
+    },
+    [
+      {
+        "item": "herbalistmod:blazebud_loose_wild"
+      },
+      {
+        "item": "herbalistmod:blazebud_loose_virginia"
+      },
+      {
+        "item": "herbalistmod:blazebud_loose_burley"
+      },
+      {
+        "item": "herbalistmod:blazebud_loose_oriental"
+      },
+      {
+        "item": "herbalistmod:blazebud_loose_dokha"
+      },
+      {
+        "item": "herbalistmod:blazebud_loose_shade"
+      }
+    ],
+    [
+      {
+        "item": "herbalistmod:enderpearl_haze_blazebud"
+      },
+      {
+        "item": "herbalistmod:redstone_kush_blazebud"
+      },
+      {
+        "item": "herbalistmod:creeper_green_blazebud"
+      },
+      {
+        "item": "herbalistmod:emerald_dream_blazebud"
+      },
+      {
+        "item": "herbalistmod:blockhead_blue_blazebud"
+      },
+      {
+        "item": "herbalistmod:netherwart_kush_blazebud"
+      }
+    ]
+
+  ],
+  "output": {
+    "item": "herbalistmod:blunt",
+    "count": 1
+  }
+} 

@@ -1,0 +1,10 @@
+{
+  "tropic_herb": {
+    "sounds": [
+      {
+        "name": "herbalistmod:tropic_herb",
+        "stream": true
+      }
+    ]
+  }
+}

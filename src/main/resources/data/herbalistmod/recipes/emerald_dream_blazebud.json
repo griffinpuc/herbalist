@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+      {
+        "item": "herbalistmod:emerald_dream_blazebud_stalk"
+      }
+  ],
+  "result": {
+    "item": "herbalistmod:emerald_dream_blazebud",
+    "count": 3
+  }
+} 

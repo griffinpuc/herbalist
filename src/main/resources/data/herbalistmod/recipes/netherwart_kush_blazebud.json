@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+      {
+        "item": "herbalistmod:netherwart_kush_blazebud_stalk"
+      }
+
+  ],
+  "result": {
+    "item": "herbalistmod:netherwart_kush_blazebud",
+    "count": 3
+  }
+} 
