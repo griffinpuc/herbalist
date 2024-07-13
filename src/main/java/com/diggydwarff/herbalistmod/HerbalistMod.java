@@ -3,6 +3,7 @@ package com.diggydwarff.herbalistmod;
 import com.diggydwarff.herbalistmod.block.entity.ModBlockEntities;
 import com.diggydwarff.herbalistmod.client.render.BlazedEffectRenderer;
 import com.diggydwarff.herbalistmod.client.render.DeliriumEffectRenderer;
+import com.diggydwarff.herbalistmod.client.render.DesertVisionEffectRenderer;
 import com.diggydwarff.herbalistmod.client.render.IntrospectiveEffectRenderer;
 import com.diggydwarff.herbalistmod.effect.BlazedEffect;
 import com.diggydwarff.herbalistmod.effect.ModEffects;
@@ -40,6 +41,7 @@ public class HerbalistMod
     public static final BlazedEffectRenderer BLAZED_EFFECT_RENDERER = new BlazedEffectRenderer();
     public static final DeliriumEffectRenderer DELRIUM_EFFECT_RENDERER = new DeliriumEffectRenderer();
     public static final IntrospectiveEffectRenderer INTROSPECTION_EFFECT_RENDERER = new IntrospectiveEffectRenderer();
+    public static final DesertVisionEffectRenderer DESERT_VISION_EFFECT_RENDERER = new DesertVisionEffectRenderer();
 
     public HerbalistMod()
     {
@@ -87,13 +89,20 @@ public class HerbalistMod
             MinecraftForge.EVENT_BUS.register(HerbalistMod.BLAZED_EFFECT_RENDERER);
             MinecraftForge.EVENT_BUS.register(HerbalistMod.DELRIUM_EFFECT_RENDERER);
             MinecraftForge.EVENT_BUS.register(HerbalistMod.INTROSPECTION_EFFECT_RENDERER);
+            MinecraftForge.EVENT_BUS.register(HerbalistMod.DESERT_VISION_EFFECT_RENDERER);
 
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLOCKHEAD_BLUE_BLAZEBUD_CROP.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.CREEPER_GREEN_BLAZEBUD_CROP.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.EMERALD_DREAM_BLAZEBUD_CROP.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ENDERPEARL_HAZE_BLAZEBUD_CROP.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.NETHERWART_KUSH_BLAZEBUD_CROP.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.REDSTONE_KUSH_BLAZEBUD_CROP.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ENDERPEARL_ECHOS_BLAZEBUD_CROP.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.NETHERWART_ECHOS_BLAZEBUD_CROP.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.REDSTONE_CHARGE_BLAZEBUD_CROP.get(), RenderType.cutout());
+
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.DREAMCAP_MUSHROOM_BLOCK.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.SNOWCAP_MUSHROOM_BLOCK.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.GOLDENGLOW_MUSHROOM_BLOCK.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.DIVINERS_SAGE_BLOCK.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ETHEREAL_FUNGUS_BLOCK.get(), RenderType.cutout());
 
         }
     }
@@ -118,6 +127,13 @@ public class HerbalistMod
             if (HerbalistMod.INTROSPECTION_EFFECT_RENDERER.effectActiveLastTick) {
                 gui.setupOverlayRenderState(true, false);
                 HerbalistMod.INTROSPECTION_EFFECT_RENDERER.renderOverlay(guiGraphics.pose());
+            }
+        });
+
+        event.registerAboveAll("desert_vision", (gui, guiGraphics, partialTick, screenWidth, screenHeight) -> {
+            if (HerbalistMod.DESERT_VISION_EFFECT_RENDERER.effectActiveLastTick) {
+                gui.setupOverlayRenderState(true, false);
+                HerbalistMod.DESERT_VISION_EFFECT_RENDERER.renderOverlay(guiGraphics.pose());
             }
         });
     }

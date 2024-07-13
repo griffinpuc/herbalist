@@ -6,10 +6,10 @@
     },
     [
       {
-        "item": "herbalistmod:enderpearl_haze_blazebud"
+        "item": "herbalistmod:enderpearl_echos_blazebud"
       },
       {
-        "item": "herbalistmod:redstone_kush_blazebud"
+        "item": "herbalistmod:redstone_charge_blazebud"
       },
       {
         "item": "herbalistmod:creeper_green_blazebud"
@@ -21,7 +21,7 @@
         "item": "herbalistmod:blockhead_blue_blazebud"
       },
       {
-        "item": "herbalistmod:netherwart_kush_blazebud"
+        "item": "herbalistmod:netherwart_echos_blazebud"
       }
     ]
   ],

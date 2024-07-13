@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "up": "herbalistmod:block/blazebud_crate_top",
+    "down": "herbalistmod:block/blazebud_crate_side",
+    "north": "herbalistmod:block/blazebud_crate_side",
+    "east": "herbalistmod:block/blazebud_crate_side",
+    "south": "herbalistmod:block/blazebud_crate_side",
+    "west": "herbalistmod:block/blazebud_crate_side",
+    "particle": "herbalistmod:block/blazebud_crate_side"
+  }
+}

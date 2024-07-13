@@ -15,6 +15,7 @@ public class DeliriumEffect extends MobEffect {
         if (!pLivingEntity.level().isClientSide()) {
 
         }
+
         super.applyEffectTick(pLivingEntity, pAmplifier);
     }
 

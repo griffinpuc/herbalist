@@ -21,6 +21,9 @@ public class IntrospectiveEffectRenderer {
     public static final int MAX_INTROSPECTION_DISTANCE = 10;
     public static final ResourceLocation INTROSPECTION_SHADER = new ResourceLocation(HerbalistMod.MODID,
             "shaders/post/introspection.json");
+
+    public static final ResourceLocation INTROSPECTION_TEXTURE = new ResourceLocation(HerbalistMod.MODID,
+            "textures/overlay/introspection.png");
     public boolean effectActiveLastTick = false;
 
     public Set<BlockPos> uncoveredBlocks = new HashSet<>();
@@ -34,6 +37,7 @@ public class IntrospectiveEffectRenderer {
 
 
     public void renderOverlay(PoseStack pose) {
+        RenderSystem.setShaderTexture(0, IntrospectiveEffectRenderer.INTROSPECTION_TEXTURE);
         RenderSystem.enableBlend();
         RenderSystem.blendFuncSeparate(
                 GlStateManager.SourceFactor.SRC_ALPHA,

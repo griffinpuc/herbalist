@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModItemModelProvider extends ItemModelProvider {
@@ -20,7 +21,23 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        simpleBlockItemBlockTexture(ModBlocks.DIVINERS_SAGE_BLOCK);
+        simpleBlockItemBlockTexture(ModBlocks.DREAMCAP_MUSHROOM_BLOCK);
+        simpleBlockItemBlockTexture(ModBlocks.ETHEREAL_FUNGUS_BLOCK);
+        simpleBlockItemBlockTexture(ModBlocks.SNOWCAP_MUSHROOM_BLOCK);
+        simpleBlockItemBlockTexture(ModBlocks.GOLDENGLOW_MUSHROOM_BLOCK);
 
+        simpleItem(ModItems.CHROUS_FRUIT_JUICE);
+        simpleItem(ModItems.DREAMCAP_MUSHROOM);
+        simpleItem(ModItems.GOLDENGLOW_MUSHROOM);
+        simpleItem(ModItems.SNOWCAP_MUSHROOM);
+        simpleItem(ModItems.ETHEREAL_FUNGUS);
+        simpleItem(ModItems.BLAZEBUD_BROWNIE);
+        simpleItem(ModItems.BLAZEBUD_COOKIE);
+        simpleItem(ModItems.DIVINERS_SAGE);
+        simpleItem(ModItems.AXOLOTL_VENOM);
+        simpleItem(ModItems.GLASS_VIAL);
+        simpleItem(ModItems.TURTLE_SHELL_DUST);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

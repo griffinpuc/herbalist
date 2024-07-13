@@ -2,12 +2,12 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-        "item": "herbalistmod:enderpearl_haze_blazebud_stalk"
+        "item": "herbalistmod:enderpearl_echos_blazebud_stalk"
       }
 
   ],
   "result": {
-    "item": "herbalistmod:enderpearl_haze_blazebud",
+    "item": "herbalistmod:enderpearl_echos_blazebud",
     "count": 3
   }
 } 

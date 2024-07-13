@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "up": "herbalistmod:block/mirage_cactus_top",
+    "down": "herbalistmod:block/mirage_cactus_bottom",
+    "north": "herbalistmod:block/mirage_cactus_side",
+    "east": "herbalistmod:block/mirage_cactus_side",
+    "south": "herbalistmod:block/mirage_cactus_side",
+    "west": "herbalistmod:block/mirage_cactus_side",
+    "particle": "herbalistmod:block/mirage_cactus_side"
+  }
+}

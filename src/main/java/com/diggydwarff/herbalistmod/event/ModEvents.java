@@ -20,7 +20,7 @@ public class ModEvents {
     public static void addCustomTrades(VillagerTradesEvent event) {
         if(event.getType() == VillagerProfession.TOOLSMITH) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-            ItemStack stack = new ItemStack(ModItems.ENDERPEARL_HAZE_SEEDS.get(), 1);
+            ItemStack stack = new ItemStack(ModItems.ENDERPEARL_ECHOS_SEEDS.get(), 1);
             int villagerLevel = 1;
 
             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
@@ -30,21 +30,21 @@ public class ModEvents {
 
         if(event.getType() == VillagerProfession.FARMER) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-            ItemStack ENDERPEARL_HAZE_SEEDS = new ItemStack(ModItems.ENDERPEARL_HAZE_SEEDS.get(), 1);
-            ItemStack REDSTONE_KUSH_SEEDS = new ItemStack(ModItems.REDSTONE_KUSH_SEEDS.get(), 1);
+            ItemStack ENDERPEARL_ECHOS_SEEDS = new ItemStack(ModItems.ENDERPEARL_ECHOS_SEEDS.get(), 1);
+            ItemStack REDSTONE_CHARGE_SEEDS = new ItemStack(ModItems.REDSTONE_CHARGE_SEEDS.get(), 1);
             ItemStack CREEPER_GREEN_SEEDS = new ItemStack(ModItems.CREEPER_GREEN_SEEDS.get(), 1);
             ItemStack EMERALD_DREAM_SEEDS = new ItemStack(ModItems.EMERALD_DREAM_SEEDS.get(), 1);
             ItemStack BLOCKHEAD_BLUE_SEEDS = new ItemStack(ModItems.BLOCKHEAD_BLUE_SEEDS.get(), 1);
-            ItemStack NETHERWART_KUSH_SEEDS = new ItemStack(ModItems.NETHERWART_KUSH_SEEDS.get(), 1);
+            ItemStack NETHERWART_ECHOS_SEEDS = new ItemStack(ModItems.NETHERWART_ECHOS_SEEDS.get(), 1);
             int villagerLevel = 1;
 
             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
                     new ItemStack(Items.EMERALD, 8),
-                    ENDERPEARL_HAZE_SEEDS,10,8,0.02F));
+                    ENDERPEARL_ECHOS_SEEDS,10,8,0.02F));
 
             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
                     new ItemStack(Items.EMERALD, 8),
-                    REDSTONE_KUSH_SEEDS,10,8,0.02F));
+                    REDSTONE_CHARGE_SEEDS,10,8,0.02F));
 
             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
                     new ItemStack(Items.EMERALD, 8),
@@ -60,7 +60,7 @@ public class ModEvents {
 
             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
                     new ItemStack(Items.EMERALD, 8),
-                    NETHERWART_KUSH_SEEDS,10,8,0.02F));
+                    NETHERWART_ECHOS_SEEDS,10,8,0.02F));
         }
     }
 }

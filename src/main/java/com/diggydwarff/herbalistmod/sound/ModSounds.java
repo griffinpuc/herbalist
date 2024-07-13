@@ -14,6 +14,7 @@ public class ModSounds {
             DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, HerbalistMod.MODID);
 
     public static final RegistryObject<SoundEvent> TROPIC_HERB = registerSoundEvents("tropic_herb");
+    public static final RegistryObject<SoundEvent> PRISM = registerSoundEvents("prism");
 
     private static RegistryObject<SoundEvent> registerSoundEvents(String name) {
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(HerbalistMod.MODID, name)));

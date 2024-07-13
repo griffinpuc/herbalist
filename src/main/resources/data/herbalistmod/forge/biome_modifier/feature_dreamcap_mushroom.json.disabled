@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "minecraft:jungle",
+    "minecraft:plains",
+    "minecraft:oak_forest",
+    "minecraft:swamp",
+    "minecraft:sparse_jungle"
+  ],
+  "features": "herbalist:patch_dreamcap_mushroom",
+  "step": "vegetal_decoration"
+}

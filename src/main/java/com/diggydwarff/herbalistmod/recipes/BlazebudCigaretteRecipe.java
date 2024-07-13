@@ -84,23 +84,23 @@ public class BlazebudCigaretteRecipe extends CustomRecipe {
 
         BlazebudItem budItem = (BlazebudItem) blazebudStack.getItem();
         switch(budItem.getBlazebudType()){
-            case "enderpearl_haze":
-                displayType = "Enderpearl Haze [Bloktiva]";
+            case "enderpearl_echos":
+                displayType = "Enderpearl Echos";
                 break;
-            case "redstone_kush":
-                displayType = "Redstone Kush [Lapisica]";
+            case "redstone_charge":
+                displayType = "Redstone Charge";
                 break;
             case "creeper_green":
-                displayType = "Creeper Green [Bloktiva]";
+                displayType = "Creeper Green";
                 break;
             case "emerald_dream":
-                displayType = "Emerald Dream [Hybrid]";
+                displayType = "Emerald Dream ";
                 break;
             case "blockhead_blue":
-                displayType = "Blockhead Blue [Lapisica]";
+                displayType = "Blockhead Blue";
                 break;
-            case "netherwart_kush":
-                displayType = "Netherwart Kush [Hybrid]";
+            case "netherwart_echos":
+                displayType = "Netherwart Echos";
                 break;
         }
 

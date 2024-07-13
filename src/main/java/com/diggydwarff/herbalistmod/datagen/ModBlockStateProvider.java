@@ -23,12 +23,27 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
 
-        makeTobaccoCrop(((CropBlock) ModBlocks.ENDERPEARL_HAZE_BLAZEBUD_CROP.get()), "blazebud", "blazebud", "enderpearlkush");
-        makeTobaccoCrop(((CropBlock) ModBlocks.REDSTONE_KUSH_BLAZEBUD_CROP.get()), "blazebud", "blazebud", "redstonekush");
+        makeTobaccoCrop(((CropBlock) ModBlocks.ENDERPEARL_ECHOS_BLAZEBUD_CROP.get()), "blazebud", "blazebud", "enderpearlechos");
+        makeTobaccoCrop(((CropBlock) ModBlocks.REDSTONE_CHARGE_BLAZEBUD_CROP.get()), "blazebud", "blazebud", "redstoneechos");
         makeTobaccoCrop(((CropBlock) ModBlocks.CREEPER_GREEN_BLAZEBUD_CROP.get()), "blazebud", "blazebud", "creepergreen");
         makeTobaccoCrop(((CropBlock) ModBlocks.EMERALD_DREAM_BLAZEBUD_CROP.get()), "blazebud", "blazebud", "emeralddream");
         makeTobaccoCrop(((CropBlock) ModBlocks.BLOCKHEAD_BLUE_BLAZEBUD_CROP.get()), "blazebud", "blazebud", "blockheadblue");
-        makeTobaccoCrop(((CropBlock) ModBlocks.NETHERWART_KUSH_BLAZEBUD_CROP.get()), "blazebud", "blazebud", "netherwartkush");
+        makeTobaccoCrop(((CropBlock) ModBlocks.NETHERWART_ECHOS_BLAZEBUD_CROP.get()), "blazebud", "blazebud", "netherwartechos");
+
+        simpleBlockWithItem(ModBlocks.DIVINERS_SAGE_BLOCK.get(), models().cross(blockTexture(ModBlocks.DIVINERS_SAGE_BLOCK.get()).getPath(),
+                blockTexture(ModBlocks.DIVINERS_SAGE_BLOCK.get())).renderType("cutout"));
+
+        simpleBlockWithItem(ModBlocks.DREAMCAP_MUSHROOM_BLOCK.get(), models().cross(blockTexture(ModBlocks.DREAMCAP_MUSHROOM_BLOCK.get()).getPath(),
+                blockTexture(ModBlocks.DREAMCAP_MUSHROOM_BLOCK.get())).renderType("cutout"));
+
+        simpleBlockWithItem(ModBlocks.SNOWCAP_MUSHROOM_BLOCK.get(), models().cross(blockTexture(ModBlocks.SNOWCAP_MUSHROOM_BLOCK.get()).getPath(),
+                blockTexture(ModBlocks.SNOWCAP_MUSHROOM_BLOCK.get())).renderType("cutout"));
+
+        simpleBlockWithItem(ModBlocks.GOLDENGLOW_MUSHROOM_BLOCK.get(), models().cross(blockTexture(ModBlocks.GOLDENGLOW_MUSHROOM_BLOCK.get()).getPath(),
+                blockTexture(ModBlocks.GOLDENGLOW_MUSHROOM_BLOCK.get())).renderType("cutout"));
+
+        simpleBlockWithItem(ModBlocks.ETHEREAL_FUNGUS_BLOCK.get(), models().cross(blockTexture(ModBlocks.ETHEREAL_FUNGUS_BLOCK.get()).getPath(),
+                blockTexture(ModBlocks.ETHEREAL_FUNGUS_BLOCK.get())).renderType("cutout"));
 
     }
 
@@ -41,17 +56,17 @@ public class ModBlockStateProvider extends BlockStateProvider {
         ConfiguredModel[] models = new ConfiguredModel[1];
 
         switch (type) {
-            case "enderpearlkush":
-                models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((EnderpearlHazeCropBlock) block).getAgeProperty()),
-                        new ResourceLocation(HerbalistMod.MODID, "block/" + textureName + state.getValue(((EnderpearlHazeCropBlock) block).getAgeProperty()))).renderType("cutout"));
+            case "enderpearlechos":
+                models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((EnderpearlEchosCropBlock) block).getAgeProperty()),
+                        new ResourceLocation(HerbalistMod.MODID, "block/" + textureName + state.getValue(((EnderpearlEchosCropBlock) block).getAgeProperty()))).renderType("cutout"));
                 break;
-            case "redstonekush":
-                models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((RedstoneKushCropBlock) block).getAgeProperty()),
-                        new ResourceLocation(HerbalistMod.MODID, "block/" + textureName + state.getValue(((RedstoneKushCropBlock) block).getAgeProperty()))).renderType("cutout"));
+            case "redstoneechos":
+                models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((RedstoneChargeCropBlock) block).getAgeProperty()),
+                        new ResourceLocation(HerbalistMod.MODID, "block/" + textureName + state.getValue(((RedstoneChargeCropBlock) block).getAgeProperty()))).renderType("cutout"));
                 break;
-            case "netherwartkush":
-                models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((NetherwartKushCropBlock) block).getAgeProperty()),
-                        new ResourceLocation(HerbalistMod.MODID, "block/" + textureName + state.getValue(((NetherwartKushCropBlock) block).getAgeProperty()))).renderType("cutout"));
+            case "netherwartechos":
+                models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((NetherwartEchosCropBlock) block).getAgeProperty()),
+                        new ResourceLocation(HerbalistMod.MODID, "block/" + textureName + state.getValue(((NetherwartEchosCropBlock) block).getAgeProperty()))).renderType("cutout"));
                 break;
             case "creepergreen":
                 models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((CreeperGreenCropBlock) block).getAgeProperty()),

@@ -14,11 +14,11 @@ public class ModRecipes {
     public static final RegistryObject<RecipeSerializer<BlazebudCigaretteRecipe>> BLAZEBUD_CIGARETTE_RECIPE_SERIALIZER =
             SERIALIZERS.register("crafting_special_blazebudcigarette", () -> BlazebudCigaretteRecipe.Serializer.INSTANCE);
 
-    public static final RegistryObject<RecipeSerializer<BluntRecipe>> BLUNT_RECIPE_SERIALIZER =
-            SERIALIZERS.register("crafting_special_blunt", () -> BluntRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<BlazebudCigarRecipe>> BLUNT_RECIPE_SERIALIZER =
+            SERIALIZERS.register("crafting_special_blazebud_cigar", () -> BlazebudCigarRecipe.Serializer.INSTANCE);
 
-    public static final RegistryObject<RecipeSerializer<SpliffRecipe>> SPLIFF_RECIPE_SERIALIZER =
-            SERIALIZERS.register("crafting_special_spliff", () -> SpliffRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<BlazebudMixedCigaretteRecipe>> SPLIFF_RECIPE_SERIALIZER =
+            SERIALIZERS.register("crafting_special_blazebud_mixed_cigarette", () -> BlazebudMixedCigaretteRecipe.Serializer.INSTANCE);
 
 
     public static void register(IEventBus eventBus) {

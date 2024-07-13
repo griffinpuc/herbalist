@@ -22,23 +22,23 @@ public class BlazebudItem extends Item {
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag)
     {
         switch (this.blazebudType){
-            case "enderpearl_haze":
-                components.add(Component.literal("Enderpearl Haze").withStyle(ChatFormatting.GREEN));
+            case "enderpearl_echos":
+                components.add(Component.literal("Enderpearl Echos"));
                 break;
-            case "redstone_kush":
-                components.add(Component.literal("Redstone Kush").withStyle(ChatFormatting.GREEN));
+            case "redstone_charge":
+                components.add(Component.literal("Redstone Charge"));
                 break;
             case "creeper_green":
-                components.add(Component.literal("Creeper Green").withStyle(ChatFormatting.GREEN));
+                components.add(Component.literal("Creeper Green"));
                 break;
             case "emerald_dream":
-                components.add(Component.literal("Emerald Green").withStyle(ChatFormatting.GREEN));
+                components.add(Component.literal("Emerald Green"));
                 break;
             case "blockhead_blue":
-                components.add(Component.literal("Blockhead Blue").withStyle(ChatFormatting.GREEN));
+                components.add(Component.literal("Blockhead Blue"));
                 break;
-            case "netherwart_kush":
-                components.add(Component.literal("Netherwart Kush").withStyle(ChatFormatting.GREEN));
+            case "netherwart_echos":
+                components.add(Component.literal("Netherwart Echos"));
                 break;
         }
     }
