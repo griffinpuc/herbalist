@@ -1,6 +1,7 @@
 package com.diggydwarff.herbalistmod.recipes;
 
 import com.diggydwarff.herbalistmod.items.BlazebudItem;
+import com.diggydwarff.tobacconistmod.items.custom.TobaccoLeafItem;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.diggydwarff.herbalistmod.HerbalistMod;
@@ -36,7 +37,7 @@ public class BlazebudCigarRecipe extends CustomRecipe {
 
         ItemStack itemstack = ItemStack.EMPTY;
         ItemStack blazebudStack = ItemStack.EMPTY;
-        ItemStack blazebudLeafStack = ItemStack.EMPTY;
+        ItemStack tobaccoLeafStack = ItemStack.EMPTY;
 
         for(int i = 0; i < craftingContainer.getContainerSize(); ++i) {
 
@@ -46,15 +47,15 @@ public class BlazebudCigarRecipe extends CustomRecipe {
 
                 if (itemstack.getItem() instanceof BlazebudItem) {
                     blazebudStack = itemstack;
-                } else if (itemstack.getItem() instanceof BlazebudItem) {
-                    blazebudLeafStack = itemstack;
+                } else if (itemstack.getItem() instanceof TobaccoLeafItem) {
+                    tobaccoLeafStack = itemstack;
                 } else {
                     return false;
                 }
             }
         }
 
-        return !blazebudStack.isEmpty() && !blazebudLeafStack.isEmpty();
+        return !blazebudStack.isEmpty() && !tobaccoLeafStack.isEmpty();
 
     }
 
@@ -62,7 +63,7 @@ public class BlazebudCigarRecipe extends CustomRecipe {
 
         ItemStack itemstack = ItemStack.EMPTY;
         ItemStack blazebudStack = ItemStack.EMPTY;
-        ItemStack blazebudLeafStack = ItemStack.EMPTY;
+        ItemStack tobaccoLeafStack = ItemStack.EMPTY;
 
         for(int i = 0; i < craftingContainer.getContainerSize(); ++i) {
 
@@ -72,8 +73,8 @@ public class BlazebudCigarRecipe extends CustomRecipe {
 
                 if (itemstack.getItem() instanceof BlazebudItem) {
                     blazebudStack = itemstack;
-                } else if (itemstack.getItem() instanceof BlazebudItem) {
-                    blazebudLeafStack = itemstack;
+                } else if (itemstack.getItem() instanceof TobaccoLeafItem) {
+                    tobaccoLeafStack = itemstack;
                 }
             }
         }
@@ -85,7 +86,6 @@ public class BlazebudCigarRecipe extends CustomRecipe {
         String displayType = "";
 
         BlazebudItem budItem = (BlazebudItem) blazebudStack.getItem();
-
         switch(budItem.getBlazebudType()){
             case "enderpearl_echos":
                 displayType = "Enderpearl Echos";
@@ -107,7 +107,8 @@ public class BlazebudCigarRecipe extends CustomRecipe {
                 break;
         }
 
-        compoundtag.putString("blazebud", blazebudStack.getDisplayName().getString());
+        compoundtag.putString("wrapper", tobaccoLeafStack.getDisplayName().getString());
+        compoundtag.putString("blazebud", displayType);
 
         returnStack.setTag(compoundtag);
 
@@ -120,7 +121,7 @@ public class BlazebudCigarRecipe extends CustomRecipe {
     }
 
     public RecipeSerializer<?> getSerializer() {
-        return ModRecipes.BLUNT_RECIPE_SERIALIZER.get();
+        return ModRecipes.BLAZEBUD_CIGAR_RECIPE_SERIALIZER.get();
     }
 
     public static class Type implements RecipeType<BlazebudCigarRecipe> {

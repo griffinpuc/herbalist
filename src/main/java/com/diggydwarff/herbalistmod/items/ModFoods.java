@@ -32,7 +32,7 @@ public class ModFoods {
     public static final FoodProperties CHORUS_DUST = new FoodProperties.Builder().nutrition(0)
             .fast()
             .saturationMod(0f)
-            .effect(() -> new MobEffectInstance(ModEffects.INTROSPECTION.get(), 5000), 1f)
+            .effect(() -> new MobEffectInstance(ModEffects.RIPPED.get(), 5000), 1f)
             .build();
 
     public static final FoodProperties MIRAGE_DUST = new FoodProperties.Builder().nutrition(0)

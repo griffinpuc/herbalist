@@ -21,16 +21,16 @@ public class ModItems {
     public static final RegistryObject<Item> MUSIC_DISC_PRISM = ITEMS.register("music_disc_prism",
             () -> new RecordItem(6, ModSounds.PRISM, new Item.Properties().stacksTo(1), 3920));
 
-    public static final RegistryObject<Item> ROLLING_PAPER = ITEMS.register("rolling_paper", () -> new RollingPaperItem(new Item.Properties()));
+    //public static final RegistryObject<Item> ROLLING_PAPER = ITEMS.register("rolling_paper", () -> new RollingPaperItem(new Item.Properties()));
 
     public static final RegistryObject<Item> BLAZEBUD_CIGAR = ITEMS.register("blazebud_cigar",
-            () -> new BluntItem(new Item.Properties().durability(100)));
+            () -> new BlazebudCigarItem(new Item.Properties().durability(100)));
 
     public static final RegistryObject<Item> BLAZEBUD_CIGARETTE = ITEMS.register("blazebud_cigarette",
             () -> new BlazebudCigaretteItem(new Item.Properties().durability(15)));
 
     public static final RegistryObject<Item> BLAZEBUD_MIXED_CIGARETTE = ITEMS.register("blazebud_mixed_cigarette",
-            () -> new BlazebudCigaretteItem(new Item.Properties().durability(15)));
+            () -> new BlazebudMixedCigaretteItem(new Item.Properties().durability(15)));
 
     public static final RegistryObject<Item> BLAZEBUD_BROWNIE = ITEMS.register("blazebud_brownie", () -> new BlazebudBrownieItem(new Item.Properties().food(ModFoods.BLAZEBUD_BROWNIE)));
     public static final RegistryObject<Item> BLAZEBUD_COOKIE = ITEMS.register("blazebud_cookie", () -> new BlazebudCookieItem(new Item.Properties().food(ModFoods.BLAZEBUD_COOKIE)));
@@ -81,7 +81,7 @@ public class ModItems {
     public static final RegistryObject<Item> MIRAGE_CACTUS_EXTRACT = ITEMS.register("mirage_cactus_extract", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> MIRAGE_CACTUS_JUICE = ITEMS.register("mirage_cactus_juice", () -> new Item(new Item.Properties().food(ModFoods.MIRAGE_CACTUS_JUICE)));
-    public static final RegistryObject<Item> CHROUS_FRUIT_JUICE = ITEMS.register("chrous_fruit_juice", () -> new Item(new Item.Properties().food(ModFoods.MIRAGE_CACTUS_JUICE)));
+    public static final RegistryObject<Item> CHROUS_FRUIT_JUICE = ITEMS.register("chorus_fruit_juice", () -> new Item(new Item.Properties().food(ModFoods.MIRAGE_CACTUS_JUICE)));
 
     public static final RegistryObject<Item> SUSPICIOUS_EXTRACT = ITEMS.register("suspicious_extract", () -> new Item(new Item.Properties()));
 
@@ -89,6 +89,8 @@ public class ModItems {
 
 
     public static final RegistryObject<Item> AXOLOTL_VENOM = ITEMS.register("axolotl_venom", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> FROG_VENOM = ITEMS.register("frog_venom", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> ETHEREAL_DUST = ITEMS.register("ethereal_dust", () -> new Item(new Item.Properties().food(ModFoods.ETHEREAL_FUNGUS_DUST)));
 

@@ -15,9 +15,9 @@ import net.minecraft.world.level.Level;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class BluntItem extends SmokingItem {
+public class BlazebudCigarItem extends SmokingItem {
 
-    public BluntItem(Properties properties) {
+    public BlazebudCigarItem(Properties properties) {
         super(properties);
     }
 
@@ -50,7 +50,7 @@ public class BluntItem extends SmokingItem {
 
             if(!blazebud.isEmpty()){
                 tooltip.add(Component.literal(wrapper.replace("[","").replace("]","") + " Wrapper").withStyle(ChatFormatting.GOLD));
-                tooltip.add(Component.literal(blazebud.replace("[","").replace("]","")).withStyle(ChatFormatting.GOLD));
+                tooltip.add(Component.literal(blazebud.replace("[","").replace("]","")+ " Blazebud").withStyle(ChatFormatting.GOLD));
             } else {
                 tooltip.add(Component.literal("Creative Tobacco").withStyle(ChatFormatting.GOLD));
             }

@@ -1,10 +1,7 @@
 package com.diggydwarff.herbalistmod;
 
 import com.diggydwarff.herbalistmod.block.entity.ModBlockEntities;
-import com.diggydwarff.herbalistmod.client.render.BlazedEffectRenderer;
-import com.diggydwarff.herbalistmod.client.render.DeliriumEffectRenderer;
-import com.diggydwarff.herbalistmod.client.render.DesertVisionEffectRenderer;
-import com.diggydwarff.herbalistmod.client.render.IntrospectiveEffectRenderer;
+import com.diggydwarff.herbalistmod.client.render.*;
 import com.diggydwarff.herbalistmod.effect.BlazedEffect;
 import com.diggydwarff.herbalistmod.effect.ModEffects;
 import com.diggydwarff.herbalistmod.items.ModFoods;
@@ -42,6 +39,7 @@ public class HerbalistMod
     public static final DeliriumEffectRenderer DELRIUM_EFFECT_RENDERER = new DeliriumEffectRenderer();
     public static final IntrospectiveEffectRenderer INTROSPECTION_EFFECT_RENDERER = new IntrospectiveEffectRenderer();
     public static final DesertVisionEffectRenderer DESERT_VISION_EFFECT_RENDERER = new DesertVisionEffectRenderer();
+    public static final RippedEffectRenderer RIPPED_EFFECT_RENDERER = new RippedEffectRenderer();
 
     public HerbalistMod()
     {
@@ -90,6 +88,7 @@ public class HerbalistMod
             MinecraftForge.EVENT_BUS.register(HerbalistMod.DELRIUM_EFFECT_RENDERER);
             MinecraftForge.EVENT_BUS.register(HerbalistMod.INTROSPECTION_EFFECT_RENDERER);
             MinecraftForge.EVENT_BUS.register(HerbalistMod.DESERT_VISION_EFFECT_RENDERER);
+            MinecraftForge.EVENT_BUS.register(HerbalistMod.RIPPED_EFFECT_RENDERER);
 
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLOCKHEAD_BLUE_BLAZEBUD_CROP.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.CREEPER_GREEN_BLAZEBUD_CROP.get(), RenderType.cutout());
@@ -134,6 +133,13 @@ public class HerbalistMod
             if (HerbalistMod.DESERT_VISION_EFFECT_RENDERER.effectActiveLastTick) {
                 gui.setupOverlayRenderState(true, false);
                 HerbalistMod.DESERT_VISION_EFFECT_RENDERER.renderOverlay(guiGraphics.pose());
+            }
+        });
+
+        event.registerAboveAll("ripped", (gui, guiGraphics, partialTick, screenWidth, screenHeight) -> {
+            if (HerbalistMod.RIPPED_EFFECT_RENDERER.effectActiveLastTick) {
+                gui.setupOverlayRenderState(true, false);
+                HerbalistMod.RIPPED_EFFECT_RENDERER.renderOverlay(guiGraphics.pose());
             }
         });
     }

@@ -1,11 +1,11 @@
 package com.diggydwarff.herbalistmod.recipes;
 
 import com.diggydwarff.herbalistmod.items.BlazebudItem;
+import com.diggydwarff.tobacconistmod.items.custom.RollingPaperItem;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.diggydwarff.herbalistmod.HerbalistMod;
 import com.diggydwarff.herbalistmod.items.ModItems;
-import com.diggydwarff.herbalistmod.items.custom.RollingPaperItem;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
@@ -123,13 +123,13 @@ public class BlazebudCigaretteRecipe extends CustomRecipe {
     public static class Type implements RecipeType<BlazebudCigaretteRecipe> {
         private Type() { }
         public static final Type INSTANCE = new Type();
-        public static final String ID = "crafting_special_blazebudcigarette";
+        public static final String ID = "crafting_special_blazebud_cigarette";
     }
 
     public static class Serializer implements RecipeSerializer<BlazebudCigaretteRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final ResourceLocation ID =
-                new ResourceLocation(HerbalistMod.MODID,"crafting_special_blazebudcigarette");
+                new ResourceLocation(HerbalistMod.MODID,"crafting_special_blazebud_cigarette");
 
         @Override
         public BlazebudCigaretteRecipe fromJson(ResourceLocation id, JsonObject json) {

@@ -71,6 +71,7 @@
   "item.herbalistmod.chorus_extract": "Chorus Extract",
   "item.herbalistmod.mirage_cactus_extract": "Mirage Cactus Extract",
   "item.herbalistmod.mirage_cactus_juice": "Mirage Cactus Juice",
+  "item.herbalistmod.chorus_fruit_juice": "Chorus Fruit Juice",
   "item.herbalistmod.suspicious_extract": "Suspicious Extract",
   "item.herbalistmod.axolotl_venom": "Axolotl Venom",
   "item.herbalistmod.glass_vial": "Glass Vial",
@@ -83,6 +84,6 @@
   "effect.herbalistmod.blazed": "Blazed",
   "effect.herbalistmod.introspection": "Introspection",
   "effect.herbalistmod.delirium": "Delirium",
-  "effect.herbalistmod.desert_vision": "Desert Vision"
-
+  "effect.herbalistmod.desert_vision": "Desert Vision",
+  "effect.herbalistmod.ripped": "Ripped"
 }

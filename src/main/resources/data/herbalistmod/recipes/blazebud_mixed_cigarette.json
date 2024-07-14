@@ -1,27 +1,27 @@
 {
-  "type": "herbalistmod:crafting_special_blazebud_cigar",
+  "type": "herbalistmod:crafting_special_blazebud_mixed_cigarette",
   "ingredients": [
     {
-      "item": "herbalistmod:rolling_paper"
+      "item": "tobacconistmod:rolling_paper"
     },
     [
       {
-        "item": "herbalistmod:blazebud_loose_wild"
+        "item": "tobacconistmod:tobacco_loose_wild"
       },
       {
-        "item": "herbalistmod:blazebud_loose_virginia"
+        "item": "tobacconistmod:tobacco_loose_virginia"
       },
       {
-        "item": "herbalistmod:blazebud_loose_burley"
+        "item": "tobacconistmod:tobacco_loose_burley"
       },
       {
-        "item": "herbalistmod:blazebud_loose_oriental"
+        "item": "tobacconistmod:tobacco_loose_oriental"
       },
       {
-        "item": "herbalistmod:blazebud_loose_dokha"
+        "item": "tobacconistmod:tobacco_loose_dokha"
       },
       {
-        "item": "herbalistmod:blazebud_loose_shade"
+        "item": "tobacconistmod:tobacco_loose_shade"
       }
     ],
     [
@@ -47,7 +47,7 @@
 
   ],
   "output": {
-    "item": "herbalistmod:blazebud_cigar",
+    "item": "herbalistmod:blazebud_mixed_cigarette",
     "count": 1
   }
 } 

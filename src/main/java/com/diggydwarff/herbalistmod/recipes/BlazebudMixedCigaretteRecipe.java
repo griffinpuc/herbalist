@@ -3,6 +3,8 @@ package com.diggydwarff.herbalistmod.recipes;
 import com.diggydwarff.herbalistmod.HerbalistMod;
 import com.diggydwarff.herbalistmod.items.ModItems;
 import com.diggydwarff.herbalistmod.items.BlazebudItem;
+import com.diggydwarff.tobacconistmod.items.custom.LooseTobaccoItem;
+import com.diggydwarff.tobacconistmod.items.custom.RollingPaperItem;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import net.minecraft.core.NonNullList;
@@ -36,7 +38,8 @@ public class BlazebudMixedCigaretteRecipe extends CustomRecipe {
 
         ItemStack itemstack = ItemStack.EMPTY;
         ItemStack blazebudStack = ItemStack.EMPTY;
-        ItemStack blazebudLeafStack = ItemStack.EMPTY;
+        ItemStack tobaccoLooseStack = ItemStack.EMPTY;
+        ItemStack paperStack = ItemStack.EMPTY;
 
         for(int i = 0; i < craftingContainer.getContainerSize(); ++i) {
 
@@ -46,15 +49,17 @@ public class BlazebudMixedCigaretteRecipe extends CustomRecipe {
 
                 if (itemstack.getItem() instanceof BlazebudItem) {
                     blazebudStack = itemstack;
-                } else if (itemstack.getItem() instanceof BlazebudItem) {
-                    blazebudLeafStack = itemstack;
+                } else if (itemstack.getItem() instanceof LooseTobaccoItem) {
+                    tobaccoLooseStack = itemstack;
+                } else if (itemstack.getItem() instanceof RollingPaperItem) {
+                    paperStack = itemstack;
                 } else {
                     return false;
                 }
             }
         }
 
-        return !blazebudStack.isEmpty() && !blazebudLeafStack.isEmpty();
+        return !blazebudStack.isEmpty() && !tobaccoLooseStack.isEmpty() && !paperStack.isEmpty();
 
     }
 
@@ -62,7 +67,8 @@ public class BlazebudMixedCigaretteRecipe extends CustomRecipe {
 
         ItemStack itemstack = ItemStack.EMPTY;
         ItemStack blazebudStack = ItemStack.EMPTY;
-        ItemStack blazebudLeafStack = ItemStack.EMPTY;
+        ItemStack tobaccoLooseStack = ItemStack.EMPTY;
+        ItemStack paperStack = ItemStack.EMPTY;
 
         for(int i = 0; i < craftingContainer.getContainerSize(); ++i) {
 
@@ -72,8 +78,10 @@ public class BlazebudMixedCigaretteRecipe extends CustomRecipe {
 
                 if (itemstack.getItem() instanceof BlazebudItem) {
                     blazebudStack = itemstack;
-                } else if (itemstack.getItem() instanceof BlazebudItem) {
-                    blazebudLeafStack = itemstack;
+                } else if (itemstack.getItem() instanceof LooseTobaccoItem) {
+                    tobaccoLooseStack = itemstack;
+                } else if (itemstack.getItem() instanceof RollingPaperItem) {
+                    paperStack = itemstack;
                 }
             }
         }
@@ -82,10 +90,11 @@ public class BlazebudMixedCigaretteRecipe extends CustomRecipe {
 
         ItemStack returnStack = new ItemStack(newItem, 1);
         CompoundTag compoundtag = new CompoundTag();
+
+        BlazebudItem item = (BlazebudItem)blazebudStack.getItem();
         String displayType = "";
 
         BlazebudItem budItem = (BlazebudItem) blazebudStack.getItem();
-
         switch(budItem.getBlazebudType()){
             case "enderpearl_echos":
                 displayType = "Enderpearl Echos";
@@ -107,6 +116,7 @@ public class BlazebudMixedCigaretteRecipe extends CustomRecipe {
                 break;
         }
 
+        compoundtag.putString("tobacco", tobaccoLooseStack.getDisplayName().getString());
         compoundtag.putString("blazebud", displayType);
 
         returnStack.setTag(compoundtag);
@@ -120,7 +130,7 @@ public class BlazebudMixedCigaretteRecipe extends CustomRecipe {
     }
 
     public RecipeSerializer<?> getSerializer() {
-        return ModRecipes.SPLIFF_RECIPE_SERIALIZER.get();
+        return ModRecipes.BLAZEBUD_MIXED_CIGARETTE_RECIPE_SERIALIZER.get();
     }
 
     public static class Type implements RecipeType<BlazebudMixedCigaretteRecipe> {

@@ -17,12 +17,18 @@ public class ModEffects {
             () -> new BlazedEffect(MobEffectCategory.BENEFICIAL, 1934612));
 
     public static final RegistryObject<MobEffect> INTROSPECTION = MOB_EFFECTS.register("introspection",
-            () -> new IntrospectionEffect(MobEffectCategory.NEUTRAL, 1235642));
+            () -> new IntrospectionEffect(MobEffectCategory.BENEFICIAL, 1235642));
 
     public static final RegistryObject<MobEffect> DESERT_VISION = MOB_EFFECTS.register("desert_vision",
             () -> new DesertVisionEffect(MobEffectCategory.NEUTRAL, 1235642));
 
+    public static final RegistryObject<MobEffect> RIPPED = MOB_EFFECTS.register("ripped",
+            () -> new RippedEffect(MobEffectCategory.NEUTRAL, 1235642));
+
     public static final RegistryObject<MobEffect> DELIRIUM = MOB_EFFECTS.register("delirium",
+            () -> new DeliriumEffect(MobEffectCategory.HARMFUL, 1235642));
+
+    public static final RegistryObject<MobEffect> DISASSOCIATED = MOB_EFFECTS.register("disassociated",
             () -> new DeliriumEffect(MobEffectCategory.HARMFUL, 1235642));
 
     public static void register(IEventBus eventBus) {

@@ -1,8 +1,8 @@
 {
-  "type": "herbalistmod:crafting_special_blazebudcigarette",
+  "type": "herbalistmod:crafting_special_blazebud_cigarette",
   "ingredients": [
     {
-      "item": "herbalistmod:rolling_paper"
+      "item": "tobacconistmod:rolling_paper"
     },
     [
       {
@@ -26,7 +26,7 @@
     ]
   ],
   "output": {
-    "item": "herbalistmod:blazebudcigarette",
+    "item": "herbalistmod:blazebud_cigarette",
     "count": 1
   }
 } 

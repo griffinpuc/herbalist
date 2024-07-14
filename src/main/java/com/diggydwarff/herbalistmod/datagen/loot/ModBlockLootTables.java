@@ -29,17 +29,17 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.BLOCKHEAD_BLUE_BLAZEBUD_CRATE.get());
         this.dropSelf(ModBlocks.NETHERWART_ECHOS_BLAZEBUD_CRATE.get());
 
-        this.add(ModBlocks.MIRAGE_CACTUS_BLOCK.get(), createStemDrops(ModBlocks.MIRAGE_CACTUS_BLOCK.get(), ModItems.MIRAGE_CACTUS.get()));
+        this.add(ModBlocks.MIRAGE_CACTUS_BLOCK.get(), createOreDrop(ModBlocks.MIRAGE_CACTUS_BLOCK.get(), ModItems.MIRAGE_CACTUS.get()));
 
-        this.add(ModBlocks.DIVINERS_SAGE_BLOCK.get(), createStemDrops(ModBlocks.DIVINERS_SAGE_BLOCK.get(), ModItems.DIVINERS_SAGE.get()));
+        this.add(ModBlocks.DIVINERS_SAGE_BLOCK.get(), createOreDrop(ModBlocks.DIVINERS_SAGE_BLOCK.get(), ModItems.DIVINERS_SAGE.get()));
 
-        this.add(ModBlocks.DREAMCAP_MUSHROOM_BLOCK.get(), createStemDrops(ModBlocks.DREAMCAP_MUSHROOM_BLOCK.get(), ModItems.DREAMCAP_MUSHROOM.get()));
+        this.add(ModBlocks.DREAMCAP_MUSHROOM_BLOCK.get(), createOreDrop(ModBlocks.DREAMCAP_MUSHROOM_BLOCK.get(), ModItems.DREAMCAP_MUSHROOM.get()));
 
-        this.add(ModBlocks.SNOWCAP_MUSHROOM_BLOCK.get(), createStemDrops(ModBlocks.SNOWCAP_MUSHROOM_BLOCK.get(), ModItems.SNOWCAP_MUSHROOM.get()));
+        this.add(ModBlocks.SNOWCAP_MUSHROOM_BLOCK.get(), createOreDrop(ModBlocks.SNOWCAP_MUSHROOM_BLOCK.get(), ModItems.SNOWCAP_MUSHROOM.get()));
 
-        this.add(ModBlocks.GOLDENGLOW_MUSHROOM_BLOCK.get(), createStemDrops(ModBlocks.GOLDENGLOW_MUSHROOM_BLOCK.get(), ModItems.GOLDENGLOW_MUSHROOM.get()));
+        this.add(ModBlocks.GOLDENGLOW_MUSHROOM_BLOCK.get(), createOreDrop(ModBlocks.GOLDENGLOW_MUSHROOM_BLOCK.get(), ModItems.GOLDENGLOW_MUSHROOM.get()));
 
-        this.add(ModBlocks.ETHEREAL_FUNGUS_BLOCK.get(), createStemDrops(ModBlocks.ETHEREAL_FUNGUS_BLOCK.get(), ModItems.ETHEREAL_FUNGUS.get()));
+        this.add(ModBlocks.ETHEREAL_FUNGUS_BLOCK.get(), createOreDrop(ModBlocks.ETHEREAL_FUNGUS_BLOCK.get(), ModItems.ETHEREAL_FUNGUS.get()));
 
         LootItemCondition.Builder enderpearlBuilder = LootItemBlockStatePropertyCondition
                 .hasBlockStateProperties(ModBlocks

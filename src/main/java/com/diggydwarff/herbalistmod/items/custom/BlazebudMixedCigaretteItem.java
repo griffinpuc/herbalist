@@ -15,9 +15,9 @@ import net.minecraft.world.level.Level;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class SpliffItem extends SmokingItem {
+public class BlazebudMixedCigaretteItem extends SmokingItem {
 
-    public SpliffItem(Properties properties) {
+    public BlazebudMixedCigaretteItem(Properties properties) {
         super(properties);
     }
 
@@ -46,11 +46,11 @@ public class SpliffItem extends SmokingItem {
         if(compoundtag != null){
 
             String blazebud = compoundtag.getString("blazebud");
-            String wrapper = compoundtag.getString("wrapper");
+            String tobacco = compoundtag.getString("tobacco");
 
             if(!blazebud.isEmpty()){
-                tooltip.add(Component.literal(wrapper.replace("[","").replace("]","") + " Wrapper").withStyle(ChatFormatting.GOLD));
-                tooltip.add(Component.literal(blazebud.replace("[","").replace("]","")).withStyle(ChatFormatting.GOLD));
+                tooltip.add(Component.literal(tobacco.replace("[","").replace("]","")).withStyle(ChatFormatting.GOLD));
+                tooltip.add(Component.literal(blazebud.replace("[","").replace("]","")+" Blazebud").withStyle(ChatFormatting.GOLD));
             } else {
                 tooltip.add(Component.literal("Creative Tobacco").withStyle(ChatFormatting.GOLD));
             }

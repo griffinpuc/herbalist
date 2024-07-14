@@ -21,40 +21,26 @@
       ]
     },
     {
-      "name": "color_convolve",
+      "name": "bumpy",
       "intarget": "a",
-      "outtarget": "b",
-      "uniforms": [
-        {
-          "name": "RedMatrix",
-          "values": [
-            0.3,
-            0.3,
-            0.1
-          ]
-        },
-        {
-          "name": "GreenMatrix",
-          "values": [
-            0.1,
-            0.6,
-            0.3
-          ]
-        },
-        {
-          "name": "BlueMatrix",
-          "values": [
-            0.2,
-            0.5,
-            0.7
-          ]
-        }
-      ]
+      "outtarget": "b"
     },
     {
-      "name": "deconverge",
-      "intarget": "a",
-      "outtarget": "c"
+      "name": "phosphor",
+      "intarget": "b",
+      "outtarget": "c",
+      "auxtargets": [
+        {
+          "name": "PrevSampler",
+          "id": "previous"
+        }
+      ],
+      "uniforms": [
+        {
+          "name": "Phosphor",
+          "values": [ 0.95, 0.95, 0.95 ]
+        }
+      ]
     },
     {
       "name": "phosphor",
@@ -70,9 +56,9 @@
         {
           "name": "Phosphor",
           "values": [
-            0.7,
-            0.9,
-            0.3
+            0.6,
+            0.6,
+            0.5
           ]
         }
       ]

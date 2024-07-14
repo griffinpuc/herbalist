@@ -72,7 +72,6 @@ public class HerbalistCreativeTab {
                         output.accept(MIRAGE_CACTUS_JUICE.get());
                         output.accept(CHROUS_FRUIT_JUICE.get());
 
-                        output.accept(ROLLING_PAPER.get());
                         output.accept(BLAZEBUD_CIGARETTE.get());
                         output.accept(BLAZEBUD_MIXED_CIGARETTE.get());
                         output.accept(BLAZEBUD_CIGAR.get());

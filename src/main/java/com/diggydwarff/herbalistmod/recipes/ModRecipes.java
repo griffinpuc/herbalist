@@ -12,12 +12,12 @@ public class ModRecipes {
     public static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, HerbalistMod.MODID);
 
     public static final RegistryObject<RecipeSerializer<BlazebudCigaretteRecipe>> BLAZEBUD_CIGARETTE_RECIPE_SERIALIZER =
-            SERIALIZERS.register("crafting_special_blazebudcigarette", () -> BlazebudCigaretteRecipe.Serializer.INSTANCE);
+            SERIALIZERS.register("crafting_special_blazebud_cigarette", () -> BlazebudCigaretteRecipe.Serializer.INSTANCE);
 
-    public static final RegistryObject<RecipeSerializer<BlazebudCigarRecipe>> BLUNT_RECIPE_SERIALIZER =
+    public static final RegistryObject<RecipeSerializer<BlazebudCigarRecipe>> BLAZEBUD_CIGAR_RECIPE_SERIALIZER =
             SERIALIZERS.register("crafting_special_blazebud_cigar", () -> BlazebudCigarRecipe.Serializer.INSTANCE);
 
-    public static final RegistryObject<RecipeSerializer<BlazebudMixedCigaretteRecipe>> SPLIFF_RECIPE_SERIALIZER =
+    public static final RegistryObject<RecipeSerializer<BlazebudMixedCigaretteRecipe>> BLAZEBUD_MIXED_CIGARETTE_RECIPE_SERIALIZER =
             SERIALIZERS.register("crafting_special_blazebud_mixed_cigarette", () -> BlazebudMixedCigaretteRecipe.Serializer.INSTANCE);
 
 
