@@ -6,6 +6,7 @@ import com.diggydwarff.herbalistmod.effect.BlazedEffect;
 import com.diggydwarff.herbalistmod.effect.ModEffects;
 import com.diggydwarff.herbalistmod.items.ModFoods;
 import com.diggydwarff.herbalistmod.sound.ModSounds;
+import com.diggydwarff.herbalistmod.world.HerbalistBiomeModifier;
 import com.mojang.logging.LogUtils;
 import com.diggydwarff.herbalistmod.block.ModBlocks;
 import com.diggydwarff.herbalistmod.items.ModItems;

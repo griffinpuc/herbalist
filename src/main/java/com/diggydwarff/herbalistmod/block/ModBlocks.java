@@ -59,11 +59,11 @@ public class ModBlocks {
 
 
     public static final RegistryObject<Block> DREAMCAP_MUSHROOM_BLOCK = registerBlock("dreamcap_mushroom_block",
-            () -> new FlowerBlock(() -> MobEffects.CONFUSION, 5,
+            () -> new DreamcapMushroomBlock(() -> MobEffects.CONFUSION, 5,
                     BlockBehaviour.Properties.copy(Blocks.ALLIUM).noOcclusion().noCollission()));
 
     public static final RegistryObject<Block> SNOWCAP_MUSHROOM_BLOCK = registerBlock("snowcap_mushroom_block",
-            () -> new FlowerBlock(() -> MobEffects.CONFUSION, 5,
+            () -> new SnowcapMushroomBlock(() -> MobEffects.CONFUSION, 5,
                     BlockBehaviour.Properties.copy(Blocks.ALLIUM).noOcclusion().noCollission()));
 
     public static final RegistryObject<Block> GOLDENGLOW_MUSHROOM_BLOCK = registerBlock("goldenglow_mushroom_block",

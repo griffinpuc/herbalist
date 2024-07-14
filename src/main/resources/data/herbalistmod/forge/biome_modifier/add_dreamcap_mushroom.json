@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "minecraft:flower_forest",
+    "minecraft:forest",
+    "minecraft:birch_forest"
+  ],
+  "features": "herbalistmod:dreamcap_mushroom_patch",
+  "step": "vegetal_decoration"
+}
