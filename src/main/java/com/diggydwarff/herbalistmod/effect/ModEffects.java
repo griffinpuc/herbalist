@@ -19,8 +19,17 @@ public class ModEffects {
     public static final RegistryObject<MobEffect> INTROSPECTION = MOB_EFFECTS.register("introspection",
             () -> new IntrospectionEffect(MobEffectCategory.BENEFICIAL, 1235642));
 
+    public static final RegistryObject<MobEffect> INTROSPECTIONII = MOB_EFFECTS.register("introspectionii",
+            () -> new IntrospectionIIEffect(MobEffectCategory.BENEFICIAL, 1235642));
+
     public static final RegistryObject<MobEffect> DESERT_VISION = MOB_EFFECTS.register("desert_vision",
             () -> new DesertVisionEffect(MobEffectCategory.NEUTRAL, 1235642));
+
+    public static final RegistryObject<MobEffect> TURTLE_VISION = MOB_EFFECTS.register("turtle_vision",
+            () -> new TurtleVisionEffect(MobEffectCategory.NEUTRAL, 1235642));
+
+    public static final RegistryObject<MobEffect> AMPED = MOB_EFFECTS.register("amped",
+            () -> new AmpedEffect(MobEffectCategory.NEUTRAL, 1235642));
 
     public static final RegistryObject<MobEffect> RIPPED = MOB_EFFECTS.register("ripped",
             () -> new RippedEffect(MobEffectCategory.NEUTRAL, 1235642));

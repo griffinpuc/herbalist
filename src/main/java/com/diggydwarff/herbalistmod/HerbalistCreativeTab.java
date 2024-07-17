@@ -56,14 +56,16 @@ public class HerbalistCreativeTab {
                         output.accept(MIRAGE_CACTUS.get());
                         output.accept(DIVINERS_SAGE.get());
 
+                        output.accept(ModBlocks.EXTRACTION_STAND_BLOCK.get());
                         output.accept(GLASS_VIAL.get());
-                        output.accept(ETHEREAL_EXTRACT.get());
                         output.accept(CHORUS_EXTRACT.get());
                         output.accept(MIRAGE_CACTUS_EXTRACT.get());
                         output.accept(SUSPICIOUS_EXTRACT.get());
                         output.accept(AXOLOTL_VENOM.get());
+                        output.accept(FROG_VENOM.get());
+                        output.accept(MAGIC_FUNGUS_EXTRACT.get());
 
-                        output.accept(ETHEREAL_DUST.get());
+                        output.accept(MAGIC_FUNGUS_DUST.get());
                         output.accept(CHORUS_DUST.get());
                         output.accept(MIRAGE_DUST.get());
                         output.accept(SUSPICIOUS_DUST.get());

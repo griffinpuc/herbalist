@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:cocoa_beans"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    [
+      {
+        "item": "herbalistmod:enderpearl_echos_blazebud"
+      },
+      {
+        "item": "herbalistmod:redstone_charge_blazebud"
+      },
+      {
+        "item": "herbalistmod:creeper_green_blazebud"
+      },
+      {
+        "item": "herbalistmod:emerald_dream_blazebud"
+      },
+      {
+        "item": "herbalistmod:blockhead_blue_blazebud"
+      },
+      {
+        "item": "herbalistmod:netherwart_echos_blazebud"
+      }
+    ]
+  ],
+  "result": {
+    "item": "herbalistmod:blazebud_cookie",
+    "count": 1
+  }
+} 

@@ -28,6 +28,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.EMERALD_DREAM_BLAZEBUD_CRATE.get());
         this.dropSelf(ModBlocks.BLOCKHEAD_BLUE_BLAZEBUD_CRATE.get());
         this.dropSelf(ModBlocks.NETHERWART_ECHOS_BLAZEBUD_CRATE.get());
+        this.dropSelf(ModBlocks.EXTRACTION_STAND_BLOCK.get());
 
         this.add(ModBlocks.MIRAGE_CACTUS_BLOCK.get(), createOreDrop(ModBlocks.MIRAGE_CACTUS_BLOCK.get(), ModItems.MIRAGE_CACTUS.get()));
 

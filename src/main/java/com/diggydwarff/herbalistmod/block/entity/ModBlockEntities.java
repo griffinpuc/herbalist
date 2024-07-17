@@ -13,8 +13,8 @@ public class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
             DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, HerbalistMod.MODID);
 
-    public static final RegistryObject<BlockEntityType<ExtractionStationEntity>> EXTRACTION_STATION_ENTITY = BLOCK_ENTITIES.register("extraction_station", () ->
-            BlockEntityType.Builder.of(ExtractionStationEntity::new, ModBlocks.EXTRACTION_STATION_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<ExtractionStandEntity>> EXTRACTION_STAND_ENTITY = BLOCK_ENTITIES.register("extraction_stand_block_entity", () ->
+            BlockEntityType.Builder.of(ExtractionStandEntity::new, ModBlocks.EXTRACTION_STAND_BLOCK.get()).build(null));
 
 
     public static void register(IEventBus eventBus) {

@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -44,6 +45,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         simpleBlockWithItem(ModBlocks.ETHEREAL_FUNGUS_BLOCK.get(), models().cross(blockTexture(ModBlocks.ETHEREAL_FUNGUS_BLOCK.get()).getPath(),
                 blockTexture(ModBlocks.ETHEREAL_FUNGUS_BLOCK.get())).renderType("cutout"));
+
+        simpleBlockWithItem(ModBlocks.EXTRACTION_STAND_BLOCK.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/extraction_stand")));
+
+        simpleBlockWithItem(ModBlocks.MIRAGE_CACTUS_BLOCK.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/mirage_cactus_block")));
+
 
     }
 

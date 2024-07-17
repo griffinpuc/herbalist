@@ -3,7 +3,6 @@ package com.diggydwarff.herbalistmod.block;
 import com.diggydwarff.herbalistmod.HerbalistMod;
 import com.diggydwarff.herbalistmod.block.custom.*;
 import com.diggydwarff.herbalistmod.items.ModItems;
-import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -67,11 +66,11 @@ public class ModBlocks {
                     BlockBehaviour.Properties.copy(Blocks.ALLIUM).noOcclusion().noCollission()));
 
     public static final RegistryObject<Block> GOLDENGLOW_MUSHROOM_BLOCK = registerBlock("goldenglow_mushroom_block",
-            () -> new FlowerBlock(() -> MobEffects.CONFUSION, 5,
+            () -> new GoldenglowMushroomBlock(() -> MobEffects.CONFUSION, 5,
                     BlockBehaviour.Properties.copy(Blocks.ALLIUM).noOcclusion().noCollission()));
 
     public static final RegistryObject<Block> ETHEREAL_FUNGUS_BLOCK = registerBlock("ethereal_fungus_block",
-            () -> new FlowerBlock(() -> MobEffects.CONFUSION, 5,
+            () -> new EtherealFungusBlock(() -> MobEffects.CONFUSION, 5,
                     BlockBehaviour.Properties.copy(Blocks.ALLIUM).noOcclusion().noCollission()));
 
     public static final RegistryObject<Block> DIVINERS_SAGE_BLOCK = registerBlock("diviners_sage_block",
@@ -79,8 +78,8 @@ public class ModBlocks {
                     BlockBehaviour.Properties.copy(Blocks.ALLIUM).noOcclusion().noCollission()));
 
 
-    public static final RegistryObject<Block> EXTRACTION_STATION_BLOCK = registerBlock("extraction_station_block",
-            () -> new ExtractionStationBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(6f).requiresCorrectToolForDrops().noOcclusion().noLootTable()));
+    public static final RegistryObject<Block> EXTRACTION_STAND_BLOCK = registerBlock("extraction_stand_block",
+            () -> new ExtractionStandBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(0.5f).noOcclusion().noLootTable()));
 
     public static final RegistryObject<Block> MIRAGE_CACTUS_BLOCK = registerBlock("mirage_cactus_block",
             () -> new CactusBlock(BlockBehaviour.Properties.copy(Blocks.CACTUS)));

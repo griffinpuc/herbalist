@@ -8,6 +8,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.RecordItem;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -29,11 +30,14 @@ public class ModItems {
     public static final RegistryObject<Item> BLAZEBUD_CIGARETTE = ITEMS.register("blazebud_cigarette",
             () -> new BlazebudCigaretteItem(new Item.Properties().durability(15)));
 
+    public static final RegistryObject<Item> DIVINERS_SAGE_CIGARETTE = ITEMS.register("diviners_sage_cigarette",
+            () -> new DivinersSageCigaretteItem(new Item.Properties().durability(15)));
+
     public static final RegistryObject<Item> BLAZEBUD_MIXED_CIGARETTE = ITEMS.register("blazebud_mixed_cigarette",
             () -> new BlazebudMixedCigaretteItem(new Item.Properties().durability(15)));
 
-    public static final RegistryObject<Item> BLAZEBUD_BROWNIE = ITEMS.register("blazebud_brownie", () -> new BlazebudBrownieItem(new Item.Properties().food(ModFoods.BLAZEBUD_BROWNIE)));
-    public static final RegistryObject<Item> BLAZEBUD_COOKIE = ITEMS.register("blazebud_cookie", () -> new BlazebudCookieItem(new Item.Properties().food(ModFoods.BLAZEBUD_COOKIE)));
+    public static final RegistryObject<Item> BLAZEBUD_BROWNIE = ITEMS.register("blazebud_brownie", () -> new BlazebudBrownieItem(new Item.Properties().food(ModFoods.BLAZEBUD_BROWNIE_FOOD)));
+    public static final RegistryObject<Item> BLAZEBUD_COOKIE = ITEMS.register("blazebud_cookie", () -> new BlazebudCookieItem(new Item.Properties().food(ModFoods.BLAZEBUD_COOKIE_FOOD)));
 
     public static final RegistryObject<Item> ENDERPEARL_ECHOS_BLAZEBUD = ITEMS.register("enderpearl_echos_blazebud", () -> new BlazebudItem(new Item.Properties(), "enderpearl_echos"));
     public static final RegistryObject<Item> REDSTONE_CHARGE_BLAZEBUD = ITEMS.register("redstone_charge_blazebud", () -> new BlazebudItem(new Item.Properties(), "redstone_charge"));
@@ -68,38 +72,42 @@ public class ModItems {
     public static final RegistryObject<Item> NETHERWART_ECHOS_SEEDS = ITEMS.register("netherwart_echos_seeds",
             () -> new ItemNameBlockItem(ModBlocks.NETHERWART_ECHOS_BLAZEBUD_CROP.get(), new Item.Properties()));
 
-    public static final RegistryObject<Item> DREAMCAP_MUSHROOM = ITEMS.register("dreamcap_mushroom", () -> new Item(new Item.Properties().food(ModFoods.DREAMCAP_MUSHROOM)));
-    public static final RegistryObject<Item> GOLDENGLOW_MUSHROOM = ITEMS.register("goldenglow_mushroom", () -> new Item(new Item.Properties().food(ModFoods.DREAMCAP_MUSHROOM)));
-    public static final RegistryObject<Item> SNOWCAP_MUSHROOM = ITEMS.register("snowcap_mushroom", () -> new Item(new Item.Properties().food(ModFoods.DREAMCAP_MUSHROOM)));
-    public static final RegistryObject<Item> ETHEREAL_FUNGUS = ITEMS.register("ethereal_fungus", () -> new Item(new Item.Properties().food(ModFoods.ETHEREAL_FUNGUS)));
+    public static final RegistryObject<Item> DREAMCAP_MUSHROOM = ITEMS.register("dreamcap_mushroom", () -> new Item(new Item.Properties().food(ModFoods.DREAMCAP_MUSHROOM_RAW_FOOD)));
+    public static final RegistryObject<Item> GOLDENGLOW_MUSHROOM = ITEMS.register("goldenglow_mushroom", () -> new Item(new Item.Properties().food(ModFoods.GOLDENGLOW_MUSHROOM_RAW_FOOD)));
+    public static final RegistryObject<Item> SNOWCAP_MUSHROOM = ITEMS.register("snowcap_mushroom", () -> new Item(new Item.Properties().food(ModFoods.SNOWCAP_MUSHROOM_RAW_FOOD)));
+    public static final RegistryObject<Item> ETHEREAL_FUNGUS = ITEMS.register("ethereal_fungus", () -> new Item(new Item.Properties().food(ModFoods.ETHEREAL_FUNGUS_RAW_FOOD)));
 
-    public static final RegistryObject<Item> MIRAGE_CACTUS = ITEMS.register("mirage_cactus", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> DIVINERS_SAGE = ITEMS.register("diviners_sage", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> ETHEREAL_EXTRACT = ITEMS.register("ethereal_extract", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> CHORUS_EXTRACT = ITEMS.register("chorus_extract", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MIRAGE_CACTUS = ITEMS.register("mirage_cactus", () -> new Item(new Item.Properties().food(ModFoods.MIRAGE_CACTUS_RAW_FOOD)));
+    public static final RegistryObject<Item> DIVINERS_SAGE = ITEMS.register("diviners_sage", () -> new Item(new Item.Properties().food(ModFoods.MIRAGE_CACTUS_JUICE_FOOD)));
+    public static final RegistryObject<Item> MAGIC_FUNGUS_EXTRACT = ITEMS.register("magic_fungus_extract", () -> new Item(new Item.Properties().food(ModFoods.MAGIC_FUNGUS_DUST_FOOD).stacksTo(1)));
+    public static final RegistryObject<Item> CHORUS_EXTRACT = ITEMS.register("chorus_extract", () -> new Item(new Item.Properties().food(ModFoods.CHORUS_DUST_FOOD)));
 
-    public static final RegistryObject<Item> MIRAGE_CACTUS_EXTRACT = ITEMS.register("mirage_cactus_extract", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MIRAGE_CACTUS_EXTRACT = ITEMS.register("mirage_cactus_extract", () -> new Item(new Item.Properties().food(ModFoods.MIRAGE_DUST_FOOD).stacksTo(1)));
 
-    public static final RegistryObject<Item> MIRAGE_CACTUS_JUICE = ITEMS.register("mirage_cactus_juice", () -> new Item(new Item.Properties().food(ModFoods.MIRAGE_CACTUS_JUICE)));
-    public static final RegistryObject<Item> CHROUS_FRUIT_JUICE = ITEMS.register("chorus_fruit_juice", () -> new Item(new Item.Properties().food(ModFoods.MIRAGE_CACTUS_JUICE)));
+    public static final RegistryObject<Item> MIRAGE_CACTUS_JUICE = ITEMS.register("mirage_cactus_juice", () -> new Item(new Item.Properties().food(ModFoods.MIRAGE_CACTUS_JUICE_FOOD).stacksTo(1)));
+    public static final RegistryObject<Item> CHROUS_FRUIT_JUICE = ITEMS.register("chorus_fruit_juice", () -> new Item(new Item.Properties().food(ModFoods.CHORUS_JUICE_FOOD).stacksTo(1)));
 
-    public static final RegistryObject<Item> SUSPICIOUS_EXTRACT = ITEMS.register("suspicious_extract", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SUSPICIOUS_EXTRACT = ITEMS.register("suspicious_extract", () -> new Item(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> GLASS_VIAL = ITEMS.register("glass_vial", () -> new Item(new Item.Properties()));
 
 
-    public static final RegistryObject<Item> AXOLOTL_VENOM = ITEMS.register("axolotl_venom", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> AXOLOTL_VENOM = ITEMS.register("axolotl_venom", () -> new Item(new Item.Properties().food(ModFoods.AXOLOTL_VENOM_FOOD).stacksTo(1)));
 
-    public static final RegistryObject<Item> FROG_VENOM = ITEMS.register("frog_venom", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> FROG_VENOM = ITEMS.register("frog_venom", () -> new Item(new Item.Properties().food(ModFoods.AXOLOTL_VENOM_FOOD).stacksTo(1)));
 
-    public static final RegistryObject<Item> ETHEREAL_DUST = ITEMS.register("ethereal_dust", () -> new Item(new Item.Properties().food(ModFoods.ETHEREAL_FUNGUS_DUST)));
+    public static final RegistryObject<Item> MAGIC_FUNGUS_DUST = ITEMS.register("magic_fungus_dust", () -> new Item(new Item.Properties().food(ModFoods.MAGIC_FUNGUS_DUST_FOOD)));
 
-    public static final RegistryObject<Item> CHORUS_DUST = ITEMS.register("chorus_dust", () -> new Item(new Item.Properties().food(ModFoods.CHORUS_DUST)));
 
-    public static final RegistryObject<Item> MIRAGE_DUST = ITEMS.register("mirage_dust", () -> new Item(new Item.Properties().food(ModFoods.MIRAGE_DUST)));
+    public static final RegistryObject<Item> AXOLOTL_VENOM_DUST = ITEMS.register("axolotl_venom_dust", () -> new Item(new Item.Properties().food(ModFoods.MAGIC_FUNGUS_DUST_FOOD)));
+    public static final RegistryObject<Item> FROG_VENOM_DUST = ITEMS.register("frog_venom_dust", () -> new Item(new Item.Properties().food(ModFoods.MAGIC_FUNGUS_DUST_FOOD)));
 
-    public static final RegistryObject<Item> SUSPICIOUS_DUST = ITEMS.register("suspicious_dust", () -> new Item(new Item.Properties().food(ModFoods.SUSPICIOUS_DUST)));
-    public static final RegistryObject<Item> TURTLE_SHELL_DUST = ITEMS.register("turtle_shell_dust", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CHORUS_DUST = ITEMS.register("chorus_dust", () -> new Item(new Item.Properties().food(ModFoods.CHORUS_DUST_FOOD)));
+
+    public static final RegistryObject<Item> MIRAGE_DUST = ITEMS.register("mirage_dust", () -> new Item(new Item.Properties().food(ModFoods.MIRAGE_DUST_FOOD)));
+
+    public static final RegistryObject<Item> SUSPICIOUS_DUST = ITEMS.register("suspicious_dust", () -> new Item(new Item.Properties().food(ModFoods.SUSPICIOUS_DUST_FOOD)));
+    public static final RegistryObject<Item> TURTLE_SHELL_DUST = ITEMS.register("turtle_shell_dust", () -> new Item(new Item.Properties().food(ModFoods.TURTLE_SHELL_DUST_FOOD)));
 
 
     public static void register(IEventBus eventBus) {

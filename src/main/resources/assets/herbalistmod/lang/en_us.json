@@ -58,16 +58,17 @@
   "block.herbalistmod.ethereal_fungus_block": "Ethereal Fungus Block",
   "block.herbalistmod.snowcap_mushroom_block": "Snowcap Mushroom Block",
   "block.herbalistmod.goldenglow_mushroom_block": "Goldenglow Mushroom Block",
-  "block.herbalistmod.extraction_station": "Extraction Station",
+  "block.herbalistmod.extraction_stand_block": "Extraction Stand",
+  "block.herbalistmod.mirage_cactus_block": "Mirage Cactus Block",
 
-  "item.herbalistmod.dreamcap_mushroom": "Dreamcap Mushoom",
-  "item.herbalistmod.snowcap_mushroom": "Snowcap Mushoom",
-  "item.herbalistmod.goldenglow_mushroom": "Goldenglow Mushoom",
+  "item.herbalistmod.dreamcap_mushroom": "Dreamcap Mushroom",
+  "item.herbalistmod.snowcap_mushroom": "Snowcap Mushroom",
+  "item.herbalistmod.goldenglow_mushroom": "Goldenglow Mushroom",
   "item.herbalistmod.ethereal_fungus": "Ethereal Fungus",
   "item.herbalistmod.mirage_cactus": "Mirage Cactus",
   "item.herbalistmod.diviners_sage": "Diviners Sage",
-  "item.herbalistmod.ethereal_extract": "Ethereal Extract",
-  "item.herbalistmod.ethereal_dust": "Ethereal Dust",
+  "item.herbalistmod.magic_fungus_extract": "Magic Fungus Extract",
+  "item.herbalistmod.magic_fungus_dust": "Magic Fungus Dust",
   "item.herbalistmod.chorus_extract": "Chorus Extract",
   "item.herbalistmod.mirage_cactus_extract": "Mirage Cactus Extract",
   "item.herbalistmod.mirage_cactus_juice": "Mirage Cactus Juice",
@@ -83,7 +84,10 @@
 
   "effect.herbalistmod.blazed": "Blazed",
   "effect.herbalistmod.introspection": "Introspection",
+  "effect.herbalistmod.introspectionii": "Introspection II",
   "effect.herbalistmod.delirium": "Delirium",
   "effect.herbalistmod.desert_vision": "Desert Vision",
-  "effect.herbalistmod.ripped": "Ripped"
+  "effect.herbalistmod.ripped": "Ripped",
+  "effect.herbalistmod.turtle_vision": "Turtle Vision",
+  "effect.herbalistmod.amped": "Amped"
 }

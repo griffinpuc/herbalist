@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "herbalistmod:mirage_cactus"
+    },
+    {
+      "item": "herbalistmod:mirage_cactus"
+    }
+  ],
+  "result": {
+    "item": "herbalistmod:mirage_cactus_juice",
+    "count": 1
+  }
+} 

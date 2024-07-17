@@ -1,0 +1,11 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "minecraft:badlands",
+    "minecraft:eroded_badlands",
+    "minecraft:wooded_badlands",
+    "minecraft:desert"
+  ],
+  "features": "herbalistmod:mirage_cactus_patch",
+  "step": "vegetal_decoration"
+}

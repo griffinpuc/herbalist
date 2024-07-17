@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    " * ",
+    " * ",
+    "///"
+  ],
+  "key":
+  {
+    "/":
+    {
+      "item": "minecraft:cobblestone"
+    },
+    "*":
+    {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result":
+  {
+    "item": "herbalistmod:extraction_stand_block",
+    "count": 1
+  }
+}

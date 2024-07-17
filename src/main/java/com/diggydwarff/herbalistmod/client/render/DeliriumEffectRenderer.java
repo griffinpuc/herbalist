@@ -21,6 +21,9 @@ public class DeliriumEffectRenderer {
     public static final int MAX_DELIRIUM_DISTANCE = 10;
     public static final ResourceLocation DELIRIUM_SHADER = new ResourceLocation(HerbalistMod.MODID,
             "shaders/post/delirium.json");
+
+    public static final ResourceLocation DELIRIUM_TEXTURE = new ResourceLocation(HerbalistMod.MODID,
+            "textures/overlay/introspection.png");
     public boolean effectActiveLastTick = false;
 
     public Set<BlockPos> uncoveredBlocks = new HashSet<>();
@@ -34,6 +37,7 @@ public class DeliriumEffectRenderer {
 
 
     public void renderOverlay(PoseStack pose) {
+        RenderSystem.setShaderTexture(0, DeliriumEffectRenderer.DELIRIUM_TEXTURE);
         RenderSystem.enableBlend();
         RenderSystem.blendFuncSeparate(
                 GlStateManager.SourceFactor.SRC_ALPHA,

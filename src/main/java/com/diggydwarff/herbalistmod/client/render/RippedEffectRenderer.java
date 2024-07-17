@@ -21,6 +21,9 @@ public class RippedEffectRenderer {
     public static final int MAX_RIPPED_VISION_DISTANCE = 10;
     public static final ResourceLocation RIPPED_SHADER = new ResourceLocation(HerbalistMod.MODID,
             "shaders/post/ripped.json");
+
+    public static final ResourceLocation RIPPED_TEXTURE = new ResourceLocation(HerbalistMod.MODID,
+            "textures/overlay/introspection.png");
     public boolean effectActiveLastTick = false;
 
     public Set<BlockPos> uncoveredBlocks = new HashSet<>();
@@ -34,6 +37,7 @@ public class RippedEffectRenderer {
 
 
     public void renderOverlay(PoseStack pose) {
+        RenderSystem.setShaderTexture(0, RippedEffectRenderer.RIPPED_TEXTURE);
         RenderSystem.enableBlend();
         RenderSystem.blendFuncSeparate(
                 GlStateManager.SourceFactor.SRC_ALPHA,

@@ -38,7 +38,6 @@ import java.util.Locale;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
-@Mod(HerbalistBiomeModifier.MODID)
 public class HerbalistBiomeModifier {
     public static final String MODID = "herbalistmod";
     private static final boolean ENABLED = true;
@@ -59,23 +58,21 @@ public class HerbalistBiomeModifier {
 
     private static final ResourceKey<PlacedFeature> DREAMCAP_MUSHROOM_PATCH = ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(MODID, "dreamcap_mushroom_patch"));
     private static final ResourceKey<PlacedFeature> SNOWCAP_MUSHROOM_PATCH = ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(MODID, "snowcap_mushroom_patch"));
+    private static final ResourceKey<PlacedFeature> GOLDENGLOW_MUSHROOM_PATCH = ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(MODID, "goldenglow_mushroom_patch"));
+    private static final ResourceKey<PlacedFeature> ETHEREAL_FUNGUS_PATCH = ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(MODID, "ethereal_fungus_patch"));
+    private static final ResourceKey<PlacedFeature> DIVINERS_SAGE_PATCH = ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(MODID, "diviners_sage_patch"));
+    private static final ResourceKey<PlacedFeature> MIRAGE_CACTUS_PATCH = ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(MODID, "mirage_cactus_patch"));
 
     private static final ResourceKey<BiomeModifier> ADD_DREAMCAP_MUSHROOM_PATCH = ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(MODID, "add_dreamcap_mushroom_patch"));
     private static final ResourceKey<BiomeModifier> ADD_SNOWCAP_MUSHROOM_PATCH = ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(MODID, "add_snowcap_mushroom_patch"));
+    private static final ResourceKey<BiomeModifier> ADD_GOLDENGLOW_MUSHROOM_PATCH = ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(MODID, "add_goldenglow_mushroom_patch"));
+    private static final ResourceKey<BiomeModifier> ADD_ETHEREAL_FUNGUS_PATCH = ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(MODID, "add_ethereal_fungus_patch"));
+    private static final ResourceKey<BiomeModifier> ADD_DIVINERS_SAGE_PATCH = ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(MODID, "add_diviners_sage_patch"));
+    private static final ResourceKey<BiomeModifier> ADD_MIRAGE_CACTUS_PATCH = ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(MODID, "add_mirage_cactus_patch"));
 
     private static final RegistrySetBuilder BUILDER = new RegistrySetBuilder();
-
-    public HerbalistBiomeModifier()
-    {
-        if (!ENABLED)
-            return;
-
-        IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
-
-        // Serializer types can be registered via deferred register.
-        BIOME_MODIFIER_SERIALIZERS.register(modBus);
-
-        modBus.addListener(this::onGatherData);
+    public static void register(IEventBus modEventBus){
+        BIOME_MODIFIER_SERIALIZERS.register(modEventBus);
     }
 
     private void onGatherData(GatherDataEvent event)

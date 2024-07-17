@@ -1,0 +1,8 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "minecraft:lush_caves"
+  ],
+  "features": "herbalistmod:goldenglow_mushroom_patch",
+  "step": "vegetal_decoration"
+}

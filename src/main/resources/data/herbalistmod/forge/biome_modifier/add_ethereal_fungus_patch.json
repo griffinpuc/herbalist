@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "minecraft:dark_forest",
+    "minecraft:mangrove_swamp",
+    "minecraft:swamp"
+  ],
+  "features": "herbalistmod:ethereal_fungus_patch",
+  "step": "vegetal_decoration"
+}
