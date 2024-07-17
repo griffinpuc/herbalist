@@ -5,6 +5,7 @@ import com.diggydwarff.herbalistmod.client.render.*;
 import com.diggydwarff.herbalistmod.effect.ModEffects;
 import com.diggydwarff.herbalistmod.client.screen.ExtractionStandScreen;
 import com.diggydwarff.herbalistmod.client.screen.ModMenuTypes;
+import com.diggydwarff.herbalistmod.events.EntityEvents;
 import com.diggydwarff.herbalistmod.sound.ModSounds;
 import com.diggydwarff.herbalistmod.world.HerbalistBiomeModifier;
 import com.mojang.logging.LogUtils;
@@ -80,6 +81,7 @@ public class HerbalistMod
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        //MinecraftForge.EVENT_BUS.register(new EntityEvents());
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

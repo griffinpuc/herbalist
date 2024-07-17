@@ -18,25 +18,5 @@ public class GlassVial extends Item {
     public GlassVial(Properties p_41383_) {
         super(p_41383_);
     }
-/*
-    @Override
-    public InteractionResult useOn(UseOnContext pContext) {
-        if(!pContext.getLevel().isClientSide()) {
-            BlockPos positionClicked = pContext.getClickedPos();
-            Player player = pContext.getPlayer();
 
-            ProjectileUtil.getEntityHitResult(
-                    player.level(),
-                    player,
-                    positionClicked,
-                    positionClicked,
-                    player.getBoundingBox().expandTowards(player.getDeltaMovement()).inflate(1.0D),
-                    (val) -> true);
-        }
-
-        }
-
-        return InteractionResult.SUCCESS;
-    }
-*/
 }
