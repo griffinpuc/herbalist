@@ -29,13 +29,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleBlockItemBlockTexture(ModBlocks.GOLDENGLOW_MUSHROOM_BLOCK);
         simpleBlockItemBlockTexture(ModBlocks.EXTRACTION_STAND_BLOCK);
 
-        simpleBlockItemBlockTexture(ModBlocks.ENDERPEARL_ECHOS_BLAZEBUD_CRATE);
-        simpleBlockItemBlockTexture(ModBlocks.CREEPER_GREEN_BLAZEBUD_CRATE);
-        simpleBlockItemBlockTexture(ModBlocks.BLOCKHEAD_BLUE_BLAZEBUD_CRATE);
-        simpleBlockItemBlockTexture(ModBlocks.NETHERWART_ECHOS_BLAZEBUD_CRATE);
-        simpleBlockItemBlockTexture(ModBlocks.EMERALD_DREAM_BLAZEBUD_CRATE);
-        simpleBlockItemBlockTexture(ModBlocks.REDSTONE_CHARGE_BLAZEBUD_CRATE);
-
         simpleItem(ModItems.MUSIC_DISC_TROPIC_HERB);
         simpleItem(ModItems.MUSIC_DISC_PRISM);
 

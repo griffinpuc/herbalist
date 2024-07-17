@@ -60,7 +60,7 @@ public class ExtractionStandMenu extends AbstractContainerMenu {
         int fuelLevel = this.data.get(1);
         int maxFuelLevel = 3000;
         int progressArrowSize = 17; // This is the height in pixels of your arrow
-        int progress = 100-(fuelLevel * progressArrowSize / maxFuelLevel);
+        int progress = (fuelLevel * progressArrowSize / maxFuelLevel);
 
         return maxFuelLevel != 0 && fuelLevel != 0 ? progress : 0;
     }

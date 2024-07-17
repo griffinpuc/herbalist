@@ -264,7 +264,7 @@ public class ExtractionStandEntity extends BlockEntity implements MenuProvider {
                 Items.POISONOUS_POTATO
         });
 
-        boolean hasFuel = entity.fuelLevel > 0;
+        boolean hasFuel = entity.fuelLevel >= 0;
         boolean hasIngredient = possibleIngredientItems.contains(entity.itemHandler.getStackInSlot(1).getItem());
         boolean hasVials = ((entity.itemHandler.getStackInSlot(2).getItem() == ModItems.GLASS_VIAL.get()) || (entity.itemHandler.getStackInSlot(3).getItem() == ModItems.GLASS_VIAL.get()) || (entity.itemHandler.getStackInSlot(4).getItem() == ModItems.GLASS_VIAL.get()));
 

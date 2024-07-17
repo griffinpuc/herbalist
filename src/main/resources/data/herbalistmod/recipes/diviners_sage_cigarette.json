@@ -1,0 +1,15 @@
+{
+  "type": "herbalistmod:crafting_special_blazebud_cigarette",
+  "ingredients": [
+    {
+      "item": "tobacconistmod:rolling_paper"
+    },
+    {
+      "item": "herbalistmod:diviners_sage"
+    }
+  ],
+  "output": {
+    "item": "herbalistmod:diviners_sage_cigarette",
+    "count": 1
+  }
+} 

@@ -76,6 +76,7 @@ public class HerbalistCreativeTab {
 
                         output.accept(BLAZEBUD_CIGARETTE.get());
                         output.accept(BLAZEBUD_MIXED_CIGARETTE.get());
+                        output.accept(DIVINERS_SAGE_CIGARETTE.get());
                         output.accept(BLAZEBUD_CIGAR.get());
                         output.accept(BLAZEBUD_BROWNIE.get());
                         output.accept(BLAZEBUD_COOKIE.get());
