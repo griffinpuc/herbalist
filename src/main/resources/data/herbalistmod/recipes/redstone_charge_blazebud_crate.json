@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "herbalistmod:redstone_charge_blazebud"
+    },
+    {
+      "item": "herbalistmod:redstone_charge_blazebud"
+    },
+    {
+      "item": "herbalistmod:redstone_charge_blazebud"
+    },
+    {
+      "item": "herbalistmod:redstone_charge_blazebud"
+    },
+    {
+      "item": "herbalistmod:redstone_charge_blazebud"
+    },
+    {
+      "item": "herbalistmod:redstone_charge_blazebud"
+    },
+    {
+      "item": "herbalistmod:redstone_charge_blazebud"
+    },
+    {
+      "item": "herbalistmod:redstone_charge_blazebud"
+    },
+    {
+      "item": "herbalistmod:redstone_charge_blazebud"
+    }
+  ],
+  "result": {
+    "item": "herbalistmod:redstone_charge_blazebud_crate",
+    "count": 1
+  }
+} 

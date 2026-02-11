@@ -90,5 +90,7 @@
   "effect.herbalistmod.desert_vision": "Desert Vision",
   "effect.herbalistmod.ripped": "Ripped",
   "effect.herbalistmod.turtle_vision": "Turtle Vision",
-  "effect.herbalistmod.amped": "Amped"
+  "effect.herbalistmod.amped": "Amped",
+
+  "entity.minecraft.villager.herbalistmod.herbalist_master": "Herbalist Master"
 }

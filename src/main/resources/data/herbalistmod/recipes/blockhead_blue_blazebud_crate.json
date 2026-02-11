@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "herbalistmod:blockhead_blue_blazebud"
+    },
+    {
+      "item": "herbalistmod:blockhead_blue_blazebud"
+    },
+    {
+      "item": "herbalistmod:blockhead_blue_blazebud"
+    },
+    {
+      "item": "herbalistmod:blockhead_blue_blazebud"
+    },
+    {
+      "item": "herbalistmod:blockhead_blue_blazebud"
+    },
+    {
+      "item": "herbalistmod:blockhead_blue_blazebud"
+    },
+    {
+      "item": "herbalistmod:blockhead_blue_blazebud"
+    },
+    {
+      "item": "herbalistmod:blockhead_blue_blazebud"
+    },
+    {
+      "item": "herbalistmod:blockhead_blue_blazebud"
+    }
+  ],
+  "result": {
+    "item": "herbalistmod:blockhead_blue_blazebud_crate",
+    "count": 1
+  }
+} 

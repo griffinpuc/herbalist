@@ -7,6 +7,7 @@ import com.diggydwarff.herbalistmod.client.screen.ExtractionStandScreen;
 import com.diggydwarff.herbalistmod.client.screen.ModMenuTypes;
 import com.diggydwarff.herbalistmod.events.EntityEvents;
 import com.diggydwarff.herbalistmod.sound.ModSounds;
+import com.diggydwarff.herbalistmod.villager.ModVillagerTrades;
 import com.diggydwarff.herbalistmod.world.HerbalistBiomeModifier;
 import com.mojang.logging.LogUtils;
 import com.diggydwarff.herbalistmod.block.ModBlocks;
@@ -71,6 +72,7 @@ public class HerbalistMod
         ModMenuTypes.register(modEventBus);
         HerbalistBiomeModifier.register(modEventBus);
 
+        MinecraftForge.EVENT_BUS.register(ModVillagerTrades.class);
         MinecraftForge.EVENT_BUS.register(this);
     }
 

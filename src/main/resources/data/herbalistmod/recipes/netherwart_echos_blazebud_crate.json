@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "herbalistmod:netherwart_echos_blazebud"
+    },
+    {
+      "item": "herbalistmod:netherwart_echos_blazebud"
+    },
+    {
+      "item": "herbalistmod:netherwart_echos_blazebud"
+    },
+    {
+      "item": "herbalistmod:netherwart_echos_blazebud"
+    },
+    {
+      "item": "herbalistmod:netherwart_echos_blazebud"
+    },
+    {
+      "item": "herbalistmod:netherwart_echos_blazebud"
+    },
+    {
+      "item": "herbalistmod:netherwart_echos_blazebud"
+    },
+    {
+      "item": "herbalistmod:netherwart_echos_blazebud"
+    },
+    {
+      "item": "herbalistmod:netherwart_echos_blazebud"
+    }
+  ],
+  "result": {
+    "item": "herbalistmod:netherwart_echos_blazebud_crate",
+    "count": 1
+  }
+} 

@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "herbalistmod:creeper_green_blazebud"
+    },
+    {
+      "item": "herbalistmod:creeper_green_blazebud"
+    },
+    {
+      "item": "herbalistmod:creeper_green_blazebud"
+    },
+    {
+      "item": "herbalistmod:creeper_green_blazebud"
+    },
+    {
+      "item": "herbalistmod:creeper_green_blazebud"
+    },
+    {
+      "item": "herbalistmod:creeper_green_blazebud"
+    },
+    {
+      "item": "herbalistmod:creeper_green_blazebud"
+    },
+    {
+      "item": "herbalistmod:creeper_green_blazebud"
+    },
+    {
+      "item": "herbalistmod:creeper_green_blazebud"
+    }
+  ],
+  "result": {
+    "item": "herbalistmod:creeper_green_blazebud_crate",
+    "count": 1
+  }
+} 

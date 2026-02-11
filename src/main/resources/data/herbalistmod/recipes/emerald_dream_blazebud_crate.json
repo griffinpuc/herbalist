@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "herbalistmod:emerald_dream_blazebud"
+    },
+    {
+      "item": "herbalistmod:emerald_dream_blazebud"
+    },
+    {
+      "item": "herbalistmod:emerald_dream_blazebud"
+    },
+    {
+      "item": "herbalistmod:emerald_dream_blazebud"
+    },
+    {
+      "item": "herbalistmod:emerald_dream_blazebud"
+    },
+    {
+      "item": "herbalistmod:emerald_dream_blazebud"
+    },
+    {
+      "item": "herbalistmod:emerald_dream_blazebud"
+    },
+    {
+      "item": "herbalistmod:emerald_dream_blazebud"
+    },
+    {
+      "item": "herbalistmod:emerald_dream_blazebud"
+    }
+  ],
+  "result": {
+    "item": "herbalistmod:emerald_dream_blazebud_crate",
+    "count": 1
+  }
+} 
