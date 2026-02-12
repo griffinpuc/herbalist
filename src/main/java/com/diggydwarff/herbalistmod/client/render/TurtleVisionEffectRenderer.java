@@ -20,7 +20,7 @@ public class TurtleVisionEffectRenderer {
 
     public static final int MAX_INTROSPECTION_DISTANCE = 10;
     public static final ResourceLocation TURTLE_VISION_SHADER = new ResourceLocation(HerbalistMod.MODID,
-            "shaders/post/introspection.json");
+            "shaders/post/turtle_vision.json");
 
     public static final ResourceLocation TURTLE_VISION_TEXTURE = new ResourceLocation(HerbalistMod.MODID,
             "textures/overlay/introspection.png");

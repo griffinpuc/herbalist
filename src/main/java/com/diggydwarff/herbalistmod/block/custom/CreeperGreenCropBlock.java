@@ -5,6 +5,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
@@ -59,8 +60,38 @@ public class CreeperGreenCropBlock extends CropBlock {
     }
 
     @Override
-    public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
-        return super.canSurvive(pState, pLevel, pPos) || (pLevel.getBlockState(pPos.below(1)).is(this));
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        BlockState below = level.getBlockState(pos.below());
+
+        // normal bottom crop rules (must be on farmland etc.)
+        if (!below.is(this)) {
+            return super.canSurvive(state, level, pos);
+        }
+
+        // upper part: only survive if the lower part itself is validly planted
+        // (i.e., the block under the lower part supports the crop)
+        BlockPos lowerPos = pos.below();
+        BlockState lowerState = below;
+
+        // optional: require the lower part to be "mature enough" to have an upper part
+        if (this.getAge(lowerState) < FIRST_STAGE_MAX_AGE) {
+            return false;
+        }
+
+        return super.canSurvive(lowerState, level, lowerPos);
+    }
+
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext ctx) {
+        BlockPos pos = ctx.getClickedPos();
+        Level level = ctx.getLevel();
+
+        // prevent manual stacking
+        if (level.getBlockState(pos.below()).is(this)) {
+            return null; // placement fails
+        }
+
+        return super.getStateForPlacement(ctx);
     }
 
     @Override

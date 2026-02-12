@@ -7,8 +7,13 @@ import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -22,12 +27,19 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
 
-        this.dropSelf(ModBlocks.ENDERPEARL_ECHOS_BLAZEBUD_CRATE.get());
-        this.dropSelf(ModBlocks.REDSTONE_CHARGE_BLAZEBUD_CRATE.get());
-        this.dropSelf(ModBlocks.CREEPER_GREEN_BLAZEBUD_CRATE.get());
-        this.dropSelf(ModBlocks.EMERALD_DREAM_BLAZEBUD_CRATE.get());
-        this.dropSelf(ModBlocks.BLOCKHEAD_BLUE_BLAZEBUD_CRATE.get());
-        this.dropSelf(ModBlocks.NETHERWART_ECHOS_BLAZEBUD_CRATE.get());
+        this.add(ModBlocks.ENDERPEARL_ECHOS_BLAZEBUD_CRATE.get(), LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                .add(LootItem.lootTableItem(ModItems.ENDERPEARL_ECHOS_BLAZEBUD.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(9.0f))))));
+        this.add(ModBlocks.REDSTONE_CHARGE_BLAZEBUD_CRATE.get(), LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                .add(LootItem.lootTableItem(ModItems.REDSTONE_CHARGE_BLAZEBUD.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(9.0f))))));
+        this.add(ModBlocks.CREEPER_GREEN_BLAZEBUD_CRATE.get(), LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                .add(LootItem.lootTableItem(ModItems.CREEPER_GREEN_BLAZEBUD.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(9.0f))))));
+        this.add(ModBlocks.EMERALD_DREAM_BLAZEBUD_CRATE.get(), LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                .add(LootItem.lootTableItem(ModItems.EMERALD_DREAM_BLAZEBUD.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(9.0f))))));
+        this.add(ModBlocks.BLOCKHEAD_BLUE_BLAZEBUD_CRATE.get(), LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                .add(LootItem.lootTableItem(ModItems.BLOCKHEAD_BLUE_BLAZEBUD.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(9.0f))))));
+        this.add(ModBlocks.NETHERWART_ECHOS_BLAZEBUD_CRATE.get(), LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                .add(LootItem.lootTableItem(ModItems.NETHERWART_ECHOS_BLAZEBUD.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(9.0f))))));
+
         this.dropSelf(ModBlocks.EXTRACTION_STAND_BLOCK.get());
 
         this.add(ModBlocks.MIRAGE_CACTUS_BLOCK.get(), createOreDrop(ModBlocks.MIRAGE_CACTUS_BLOCK.get(), ModItems.MIRAGE_CACTUS.get()));

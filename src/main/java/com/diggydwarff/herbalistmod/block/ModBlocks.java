@@ -38,24 +38,46 @@ public class ModBlocks {
 
 
     public static final RegistryObject<Block> ENDERPEARL_ECHOS_BLAZEBUD_CRATE = registerBlock("enderpearl_echos_blazebud_crate",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(1.0F)              // lower = faster (try 0.7–1.5)
+                    .sound(SoundType.WOOD)
+                    .noOcclusion()
+            ));
 
     public static final RegistryObject<Block> REDSTONE_CHARGE_BLAZEBUD_CRATE = registerBlock("redstone_charge_blazebud_crate",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(1.0F)              // lower = faster (try 0.7–1.5)
+                    .sound(SoundType.WOOD)
+                    .noOcclusion()
+            ));
 
     public static final RegistryObject<Block> EMERALD_DREAM_BLAZEBUD_CRATE = registerBlock("emerald_dream_blazebud_crate",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(1.0F)              // lower = faster (try 0.7–1.5)
+                    .sound(SoundType.WOOD)
+                    .noOcclusion()
+            ));
 
     public static final RegistryObject<Block> BLOCKHEAD_BLUE_BLAZEBUD_CRATE = registerBlock("blockhead_blue_blazebud_crate",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(1.0F)              // lower = faster (try 0.7–1.5)
+                    .sound(SoundType.WOOD)
+                    .noOcclusion()
+            ));
 
     public static final RegistryObject<Block> NETHERWART_ECHOS_BLAZEBUD_CRATE = registerBlock("netherwart_echos_blazebud_crate",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(1.0F)              // lower = faster (try 0.7–1.5)
+                    .sound(SoundType.WOOD)
+                    .noOcclusion()
+            ));
 
     public static final RegistryObject<Block> CREEPER_GREEN_BLAZEBUD_CRATE = registerBlock("creeper_green_blazebud_crate",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
-
-
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(1.0F)              // lower = faster (try 0.7–1.5)
+                    .sound(SoundType.WOOD)
+                    .noOcclusion()
+            ));
 
     public static final RegistryObject<Block> DREAMCAP_MUSHROOM_BLOCK = registerBlock("dreamcap_mushroom_block",
             () -> new DreamcapMushroomBlock(() -> MobEffects.CONFUSION, 5,
