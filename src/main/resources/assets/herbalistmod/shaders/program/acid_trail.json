@@ -1,0 +1,13 @@
+{
+  "vertex": "minecraft:post/post",
+  "fragment": "herbalistmod:acid_trail",
+  "samplers": [
+    { "name": "DiffuseSampler" },
+    { "name": "PrevSampler" }
+  ],
+  "uniforms": [
+    { "name": "InSize", "type": "float", "count": 2, "values": [1.0, 1.0] },
+    { "name": "OutSize", "type": "float", "count": 2, "values": [1.0, 1.0] },
+    { "name": "TrailStrength", "type": "float", "count": 1, "values": [0.88] }
+  ]
+}

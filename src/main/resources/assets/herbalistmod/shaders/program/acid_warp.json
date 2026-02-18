@@ -1,0 +1,7 @@
+{
+  "vertex": "minecraft:post/post",
+  "fragment": "herbalistmod:acid_warp",
+  "samplers": [
+    { "name": "DiffuseSampler" }
+  ]
+}

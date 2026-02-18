@@ -40,6 +40,9 @@ public class ModEffects {
     public static final RegistryObject<MobEffect> DISASSOCIATED = MOB_EFFECTS.register("disassociated",
             () -> new DeliriumEffect(MobEffectCategory.HARMFUL, 1235642));
 
+    public static final RegistryObject<MobEffect> ACID = MOB_EFFECTS.register("acid",
+            () -> new AcidEffect(MobEffectCategory.NEUTRAL, 0x7BFF4A));
+
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);
     }

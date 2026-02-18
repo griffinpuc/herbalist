@@ -51,6 +51,8 @@ public class HerbalistMod
 
     public static final AmpedEffectRenderer AMPED_EFFECT_RENDERER = new AmpedEffectRenderer();
 
+    public static final AcidEffectRenderer ACID_EFFECT_RENDERER = new AcidEffectRenderer();
+
     public HerbalistMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -84,6 +86,7 @@ public class HerbalistMod
     private void commonSetup(final FMLCommonSetupEvent event)
     {
         //MinecraftForge.EVENT_BUS.register(new EntityEvents());
+        event.enqueueWork(ModVillagers::registerPOIs);
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
