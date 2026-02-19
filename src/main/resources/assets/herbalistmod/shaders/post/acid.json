@@ -1,10 +1,36 @@
 {
-  "targets": ["swap"],
+  "targets": [
+    "swap",
+    "previous",
+    "a",
+    "b"
+  ],
   "passes": [
     {
       "name": "herbalistmod:acid_warp",
       "intarget": "minecraft:main",
-      "outtarget": "swap"
+      "outtarget": "a"
+    },
+    {
+      "name": "herbalistmod:acid_chromatic",
+      "intarget": "a",
+      "outtarget": "b"
+    },
+    {
+      "name": "herbalistmod:acid_trail",
+      "intarget": "b",
+      "outtarget": "swap",
+      "auxtargets": [
+        {
+          "name": "PrevSampler",
+          "id": "previous"
+        }
+      ]
+    },
+    {
+      "name": "blit",
+      "intarget": "swap",
+      "outtarget": "previous"
     },
     {
       "name": "blit",

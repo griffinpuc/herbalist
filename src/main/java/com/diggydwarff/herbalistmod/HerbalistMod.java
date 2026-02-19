@@ -53,6 +53,8 @@ public class HerbalistMod
 
     public static final AcidEffectRenderer ACID_EFFECT_RENDERER = new AcidEffectRenderer();
 
+    public static final FractalEffectRenderer FRACTAL_EFFECT_RENDERER = new FractalEffectRenderer();
+
     public HerbalistMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();

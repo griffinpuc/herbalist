@@ -1,6 +1,7 @@
 package com.diggydwarff.herbalistmod.effect;
 
 import com.diggydwarff.herbalistmod.HerbalistMod;
+import com.diggydwarff.herbalistmod.client.render.MirageEffectRenderer;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -42,6 +43,12 @@ public class ModEffects {
 
     public static final RegistryObject<MobEffect> ACID = MOB_EFFECTS.register("acid",
             () -> new AcidEffect(MobEffectCategory.NEUTRAL, 0x7BFF4A));
+
+    public static final RegistryObject<MobEffect> FRACTAL = MOB_EFFECTS.register("fractal",
+            () -> new FractalEffect(MobEffectCategory.NEUTRAL, 0x7BFF4A));
+
+    public static final RegistryObject<MobEffect> MIRAGE = MOB_EFFECTS.register("mirage",
+            () -> new MirageEffect(MobEffectCategory.NEUTRAL, 0x7BFF4A));
 
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);

@@ -17,10 +17,10 @@ import java.lang.reflect.Field;
 import java.util.List;
 
 @Mod.EventBusSubscriber(modid = HerbalistMod.MODID, value = Dist.CLIENT)
-public class AcidEffectRenderer {
+public class FractalEffectRenderer {
 
-    private static final ResourceLocation ACID_SHADER =
-            new ResourceLocation(HerbalistMod.MODID, "shaders/post/acid.json");
+    private static final ResourceLocation FRACTAL_SHADER =
+            new ResourceLocation(HerbalistMod.MODID, "shaders/post/fractal.json");
 
     private static boolean activeLastTick = false;
     private static float t = 0f;
@@ -34,21 +34,21 @@ public class AcidEffectRenderer {
         if (event.player != mc.player) return;
         if (event.phase != TickEvent.Phase.END) return;
 
-        MobEffectInstance eff = mc.player.getEffect(ModEffects.ACID.get());
+        MobEffectInstance eff = mc.player.getEffect(ModEffects.FRACTAL.get());
         int dur = eff == null ? 0 : eff.getDuration();
         int amp = eff == null ? 0 : eff.getAmplifier();
 
         boolean shouldBeActive = dur > 1;
 
         float target = shouldBeActive ? 1.0f : 0.0f;
-        float lerpSpeed = shouldBeActive ? 0.12f : 0.18f;
+        float lerpSpeed = shouldBeActive ? 0.10f : 0.18f;
         intensity = Mth.lerp(lerpSpeed, intensity, target);
 
-        if (intensity > 0.001f) t += 0.05f;
+        if (intensity > 0.001f) t += 0.045f;
 
         if (shouldBeActive && !activeLastTick) {
             activeLastTick = true;
-            mc.tell(() -> mc.gameRenderer.loadEffect(ACID_SHADER));
+            mc.tell(() -> mc.gameRenderer.loadEffect(FRACTAL_SHADER));
         } else if (!shouldBeActive && activeLastTick && intensity < 0.01f) {
             activeLastTick = false;
             mc.tell(() -> mc.gameRenderer.shutdownEffect());
@@ -64,24 +64,18 @@ public class AcidEffectRenderer {
         setUniformEveryPass(chain, "Time", t);
         setUniformEveryPass(chain, "Intensity", intensity);
 
-        float breathe = 0.55f + 0.45f * Mth.sin(t * 0.20f); // slow 0..1-ish
-        float baseWarp = 0.0065f * intensity * ampBoost;    // keep your tuned base
+        // breathe the warp so it fades in/out
+        float breathe = 0.55f + 0.45f * Mth.sin(t * 0.20f);
+        float baseWarp = 0.0060f * intensity * ampBoost;
         setUniformEveryPass(chain, "WarpStrength", baseWarp * breathe);
-        setUniformEveryPass(chain, "WarpScale", 2.2f);
-        setUniformEveryPass(chain, "BreathSpeed", 0.6f * ampBoost);
+        setUniformEveryPass(chain, "WarpScale", 2.1f);
 
-        setUniformEveryPass(chain, "Aberration", 0.0015f + 0.0020f * intensity);
-        setUniformEveryPass(chain, "AberrationSpeed", 0.9f * ampBoost);
+        // color motion (fractal shader uses these)
+        setUniformEveryPass(chain, "HueSpeed", 0.06f + 0.18f * intensity);
+        setUniformEveryPass(chain, "SatBoost", 1.20f + 0.55f * intensity);
 
-        setUniformEveryPass(chain, "HueSpeed", 0.10f + 0.35f * intensity);
-        setUniformEveryPass(chain, "SatBoost", 1.15f + 0.35f * intensity);
-
-        setUniformEveryPass(chain, "Threshold", 0.72f);
-        setUniformEveryPass(chain, "Knee", 0.2f);
-        setUniformEveryPass(chain, "BloomStrength", 0.55f * intensity);
-
-        setUniformEveryPass(chain, "Radius", 6.0f);
-        setUniformEveryPass(chain, "TrailStrength", 0.62f + 0.16f * intensity);
+        // trails (keep playable)
+        setUniformEveryPass(chain, "TrailStrength", 0.55f + 0.18f * intensity);
     }
 
     private static PostChain getPostChain(GameRenderer renderer) {
@@ -105,7 +99,7 @@ public class AcidEffectRenderer {
             for (Object passObj : passes) {
                 Field effectField = passObj.getClass().getDeclaredField("effect");
                 effectField.setAccessible(true);
-                Object effect = effectField.get(passObj); // EffectInstance
+                Object effect = effectField.get(passObj);
 
                 Object uniform = effect.getClass().getMethod("getUniform", String.class).invoke(effect, name);
                 if (uniform != null) {
