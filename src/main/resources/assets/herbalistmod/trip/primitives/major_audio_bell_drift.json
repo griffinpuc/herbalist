@@ -1,0 +1,1 @@
+{"id":"audio.major_bell_drift","type":"audio","tag":"AUDIO","major":true,"weight":0.22,"sound":"minecraft:block.bell.use","minDelayTicks":120,"maxDelayTicks":320,"volMin":0.15,"volMax":0.45,"pitchMin":0.75,"pitchMax":1.05,"soundRadius":90.0}

@@ -1,0 +1,1 @@
+{"id":"camera.fov_slow_expand","type":"fov","tag":"CAMERA","major":false,"weight":0.5,"fovMode":"sine","fovAmp":2.0,"minSpeed":0.05,"maxSpeed":0.18}

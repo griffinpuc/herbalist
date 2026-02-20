@@ -1,0 +1,1 @@
+{"id":"world.minor_cloud_10","type":"particles","tag":"WORLD","major":false,"weight":0.45,"particle":"minecraft:flame","pattern":"cloud","minCount":8,"maxCount":26,"radius":12.0,"yMin":0.0,"yMax":6.0}

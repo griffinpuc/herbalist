@@ -1,0 +1,1 @@
+{"id":"world.ash_rain","type":"particles","tag":"WORLD","weight":0.6,"particle":"minecraft:ash","pattern":"cloud","minCount":4,"maxCount":22,"radius":14,"yMin":0.0,"yMax":6.0}

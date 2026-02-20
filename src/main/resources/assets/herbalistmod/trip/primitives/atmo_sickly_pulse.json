@@ -1,0 +1,1 @@
+{"id":"atmo.sickly_pulse","type":"fog","tag":"ATMOSPHERE","weight":0.22,"fogMode":"pulse","colorA":[0.25,0.55,0.1],"colorB":[0.75,0.95,0.25],"minSpeed":0.35,"maxSpeed":1.2}

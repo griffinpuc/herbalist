@@ -1,0 +1,1 @@
+{"id":"camera.major_jitter_micro","type":"fov","tag":"CAMERA","major":true,"weight":0.35,"fovMode":"jitter","fovAmp":2.2,"minStrength":0.35,"maxStrength":1.0,"minSpeed":0.6,"maxSpeed":1.4}

@@ -1,0 +1,1 @@
+{"id":"world.heat_haze_particles","type":"particles","tag":"WORLD","weight":0.7,"particle":"minecraft:ash","pattern":"cloud","minCount":2,"maxCount":18,"radius":10,"yMin":0.0,"yMax":2.0}

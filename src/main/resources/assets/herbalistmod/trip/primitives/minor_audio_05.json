@@ -1,0 +1,1 @@
+{"id":"audio.minor_05","type":"audio","tag":"AUDIO","major":false,"weight":0.35,"sound":"minecraft:entity.ghast.scream","minDelayTicks":120,"maxDelayTicks":320,"volMin":0.18,"volMax":0.55,"pitchMin":0.8,"pitchMax":1.2,"soundRadius":110.0}

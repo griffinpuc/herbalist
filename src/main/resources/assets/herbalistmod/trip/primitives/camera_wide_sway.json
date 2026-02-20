@@ -1,0 +1,1 @@
+{"id":"camera.wide_sway","type":"fov","tag":"CAMERA","weight":0.22,"fovMode":"sine","fovAmp":7.5,"minSpeed":0.15,"maxSpeed":0.75,"minStrength":0.25,"maxStrength":1.0}

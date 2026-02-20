@@ -1,0 +1,1 @@
+{"id":"audio.wind_gust","type":"audio","tag":"AUDIO","weight":0.12,"sound":"minecraft:entity.phantom.flap","minDelayTicks":90,"maxDelayTicks":220,"volMin":0.25,"volMax":0.75,"pitchMin":0.8,"pitchMax":1.35,"soundRadius":85.0}

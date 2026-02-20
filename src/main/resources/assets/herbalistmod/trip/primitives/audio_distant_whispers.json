@@ -1,0 +1,1 @@
+{"id":"audio.distant_whispers","type":"audio","tag":"AUDIO","weight":0.35,"sound":"minecraft:entity.enderman.ambient","minDelayTicks":180,"maxDelayTicks":420,"volMin":0.2,"volMax":0.6,"pitchMin":0.7,"pitchMax":1.1,"soundRadius":90}

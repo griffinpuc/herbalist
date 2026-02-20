@@ -1,0 +1,1 @@
+{"id":"world.obsidian_tear_ring","type":"particles","tag":"WORLD","weight":0.14,"particle":"minecraft:falling_obsidian_tear","pattern":"ring","minCount":4,"maxCount":18,"minStrength":0.25,"maxStrength":1.0}

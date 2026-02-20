@@ -1,0 +1,1 @@
+{"id":"postfx.mirage","type":"postfx","tag":"POSTFX","major":true,"weight":0.45,"conflicts":["POSTFX"],"shader":"herbalistmod:shaders/post/mirage.json","minStrength":0.25,"maxStrength":1.0,"minSpeed":0.2,"maxSpeed":1.2}

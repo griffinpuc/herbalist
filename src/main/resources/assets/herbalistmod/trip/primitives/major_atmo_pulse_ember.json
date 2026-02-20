@@ -1,0 +1,1 @@
+{"id":"atmo.major_pulse_ember","type":"fog","tag":"ATMOSPHERE","major":true,"weight":0.5,"fogMode":"pulse","colorA":[0.85,0.2,0.1],"colorB":[0.95,0.55,0.1],"minSpeed":0.2,"maxSpeed":0.9,"minStrength":0.35,"maxStrength":1.0}

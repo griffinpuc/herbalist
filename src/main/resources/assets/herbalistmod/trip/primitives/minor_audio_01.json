@@ -1,0 +1,1 @@
+{"id":"audio.minor_01","type":"audio","tag":"AUDIO","major":false,"weight":0.3,"sound":"minecraft:ambient.cave","minDelayTicks":70,"maxDelayTicks":420,"volMin":0.12,"volMax":0.35,"pitchMin":0.9,"pitchMax":1.2,"soundRadius":60.0}

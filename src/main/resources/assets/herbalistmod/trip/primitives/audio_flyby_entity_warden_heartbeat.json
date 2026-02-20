@@ -1,0 +1,1 @@
+{"id":"audio.flyby.entity_warden_heartbeat","type":"audio","tag":"AUDIO","major":true,"weight":0.18,"sound":"minecraft:entity.warden.heartbeat","audioMode":"flyby","minDelayTicks":140,"maxDelayTicks":520,"volMin":0.25,"volMax":0.9,"pitchMin":0.7,"pitchMax":1.35,"soundRadius":70}

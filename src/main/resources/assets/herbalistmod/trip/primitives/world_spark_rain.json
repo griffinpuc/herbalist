@@ -1,0 +1,1 @@
+{"id":"world.spark_rain","type":"particles","tag":"WORLD","weight":0.45,"particle":"minecraft:flame","pattern":"cloud","minCount":2,"maxCount":10,"radius":10,"yMin":0.0,"yMax":5.0}

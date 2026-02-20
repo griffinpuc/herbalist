@@ -1,0 +1,1 @@
+{"id":"camera.snap_shock","type":"fov","tag":"CAMERA","weight":0.12,"fovMode":"snap","fovAmp":10.0,"snapEveryTicks":120,"minStrength":0.35,"maxStrength":1.0}

@@ -1,0 +1,1 @@
+{"id":"audio.scatter.block_amethyst_block_chime","type":"audio","tag":"AUDIO","major":false,"weight":0.12,"sound":"minecraft:block.amethyst_block.chime","audioMode":"scatter","minDelayTicks":140,"maxDelayTicks":520,"volMin":0.25,"volMax":0.9,"pitchMin":0.7,"pitchMax":1.35,"soundRadius":70}

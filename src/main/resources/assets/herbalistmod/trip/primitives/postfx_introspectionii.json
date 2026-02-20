@@ -1,0 +1,1 @@
+{"id":"postfx.introspectionii","type":"postfx","tag":"POSTFX","major":true,"weight":0.25,"conflicts":["POSTFX"],"shader":"herbalistmod:shaders/post/introspectionii.json","minStrength":0.25,"maxStrength":1.0,"minSpeed":0.2,"maxSpeed":1.2}

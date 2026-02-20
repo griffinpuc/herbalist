@@ -1,0 +1,1 @@
+{"id":"world.flame_horizon","type":"particles","tag":"WORLD","weight":0.12,"particle":"minecraft:flame","pattern":"horizon_blob","minCount":2,"maxCount":10,"minStrength":0.25,"maxStrength":0.9,"minSpeed":0.15,"maxSpeed":0.7}

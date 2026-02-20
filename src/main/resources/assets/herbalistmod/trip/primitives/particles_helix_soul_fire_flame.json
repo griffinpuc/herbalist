@@ -1,0 +1,1 @@
+{"id":"particles.helix.soul_fire_flame","type":"particles","tag":"WORLD","major":true,"weight":0.16,"particle":"minecraft:soul_fire_flame","pattern":"helix","minCount":3,"maxCount":26,"radius":10.0,"yMin":0.0,"yMax":6.0,"minSpeed":0.25,"maxSpeed":1.2}

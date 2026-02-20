@@ -1,0 +1,1 @@
+{"id":"atmo.major_tint_blood","type":"fog","tag":"ATMOSPHERE","major":true,"weight":0.55,"fogMode":"tint","colorA":[0.75,0.05,0.1],"minStrength":0.35,"maxStrength":1.0}

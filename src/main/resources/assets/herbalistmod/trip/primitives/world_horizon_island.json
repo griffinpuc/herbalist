@@ -1,0 +1,1 @@
+{"id":"world.horizon_island_particles","type":"particles","tag":"WORLD","major":true,"weight":0.55,"particle":"minecraft:ash","pattern":"horizon_blob","minCount":30,"maxCount":120}

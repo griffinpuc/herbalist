@@ -1,0 +1,1 @@
+{"id":"entity.trail_heavy","type":"entity_particles","tag":"ENTITY","weight":0.14,"entityPattern":"trail","entityMax":18,"minSpeed":0.25,"maxSpeed":1.2,"minStrength":0.3,"maxStrength":1.0}

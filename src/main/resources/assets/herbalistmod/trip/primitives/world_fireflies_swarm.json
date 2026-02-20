@@ -1,0 +1,1 @@
+{"id":"world.fireflies_swarm","type":"particles","tag":"WORLD","weight":0.5,"particle":"minecraft:falling_obsidian_tear","pattern":"cloud","minCount":6,"maxCount":18,"radius":10,"yMin":0.0,"yMax":3.0}

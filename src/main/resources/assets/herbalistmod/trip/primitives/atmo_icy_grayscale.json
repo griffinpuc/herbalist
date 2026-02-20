@@ -1,0 +1,1 @@
+{"id":"atmo.icy_grayscale","type":"fog","tag":"ATMOSPHERE","weight":0.18,"fogMode":"grayscale","grayMix":0.75,"colorA":[0.55,0.75,0.95],"minStrength":0.25,"maxStrength":0.9}

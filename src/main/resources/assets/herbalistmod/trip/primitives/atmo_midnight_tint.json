@@ -1,0 +1,1 @@
+{"id":"atmo.midnight_tint","type":"fog","tag":"ATMOSPHERE","weight":0.28,"fogMode":"tint","colorA":[0.06,0.06,0.2],"minStrength":0.3,"maxStrength":1.0}

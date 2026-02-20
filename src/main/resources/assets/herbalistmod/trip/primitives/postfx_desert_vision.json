@@ -1,0 +1,1 @@
+{"id":"postfx.desert_vision","type":"postfx","tag":"POSTFX","major":true,"weight":0.25,"conflicts":["POSTFX"],"shader":"herbalistmod:shaders/post/desert_vision.json","minStrength":0.25,"maxStrength":1.0,"minSpeed":0.2,"maxSpeed":1.2}

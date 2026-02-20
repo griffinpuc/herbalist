@@ -1,0 +1,1 @@
+{"id":"audio.minor_06","type":"audio","tag":"AUDIO","major":false,"weight":0.4,"sound":"minecraft:block.bell.use","minDelayTicks":70,"maxDelayTicks":260,"volMin":0.25,"volMax":0.55,"pitchMin":0.9,"pitchMax":1.2,"soundRadius":90.0}

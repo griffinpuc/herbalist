@@ -1,0 +1,1 @@
+{"id":"entity.halo.enchanted_hit","type":"entity_particles","tag":"ENTITY","major":false,"weight":0.2,"particle":"minecraft:enchanted_hit","entityPattern":"halo","entityMax":10,"entityRadius":1.4,"minSpeed":0.25,"maxSpeed":1.2}

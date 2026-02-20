@@ -1,0 +1,1 @@
+{"id":"world.snow_spores","type":"particles","tag":"WORLD","major":true,"weight":0.8,"particle":"minecraft:snowflake","pattern":"cloud","minCount":4,"maxCount":25,"radius":14,"yMin":0.0,"yMax":6.0}
