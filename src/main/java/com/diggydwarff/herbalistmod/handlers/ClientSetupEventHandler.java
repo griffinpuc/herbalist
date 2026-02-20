@@ -27,6 +27,8 @@ public class ClientSetupEventHandler {
         MinecraftForge.EVENT_BUS.register(HerbalistMod.TURTLE_VISION_EFFECT_RENDERER);
         MinecraftForge.EVENT_BUS.register(HerbalistMod.AMPED_EFFECT_RENDERER);
         MinecraftForge.EVENT_BUS.register(HerbalistMod.ACID_EFFECT_RENDERER);
+        MinecraftForge.EVENT_BUS.register(HerbalistMod.FRACTAL_EFFECT_RENDERER);
+        MinecraftForge.EVENT_BUS.register(HerbalistMod.REALITY_BEND);
     }
 
     @SubscribeEvent

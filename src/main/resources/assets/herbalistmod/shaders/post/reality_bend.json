@@ -1,0 +1,43 @@
+{
+  "targets": [
+    "swap",
+    "previous",
+    "a",
+    "b"
+  ],
+  "passes": [
+    {
+      "name": "herbalistmod:realitywarp",
+      "intarget": "minecraft:main",
+      "outtarget": "a",
+      "uniforms": [
+        { "name": "Intensity", "values": [ 1.0 ] },
+        { "name": "WarpAmp",   "values": [ 0.007 ] },
+        { "name": "Fold",      "values": [ 0.10 ] }
+      ]
+    },
+    {
+      "name": "herbalistmod:realityfeedback",
+      "intarget": "a",
+      "outtarget": "swap",
+      "auxtargets": [
+        { "name": "PrevSampler", "id": "previous" }
+      ],
+      "uniforms": [
+        { "name": "Intensity",      "values": [ 0.90 ] },
+        { "name": "FeedbackAmount", "values": [ 0.03 ] },
+        { "name": "Morphiness",     "values": [ 0.75 ] }
+      ]
+    },
+    {
+      "name": "blit",
+      "intarget": "swap",
+      "outtarget": "previous"
+    },
+    {
+      "name": "blit",
+      "intarget": "swap",
+      "outtarget": "minecraft:main"
+    }
+  ]
+}

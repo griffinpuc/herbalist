@@ -50,6 +50,9 @@ public class ModEffects {
     public static final RegistryObject<MobEffect> MIRAGE = MOB_EFFECTS.register("mirage",
             () -> new MirageEffect(MobEffectCategory.NEUTRAL, 0x7BFF4A));
 
+    public static final RegistryObject<MobEffect> REALITY_BEND = MOB_EFFECTS.register("reality_bend",
+            () -> new RealityBendEffect(MobEffectCategory.NEUTRAL, 0xB84CFF));
+
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);
     }

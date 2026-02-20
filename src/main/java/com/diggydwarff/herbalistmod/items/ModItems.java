@@ -89,8 +89,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> SUSPICIOUS_EXTRACT = ITEMS.register("suspicious_extract", () -> new Item(new Item.Properties().stacksTo(1)));
 
-    public static final RegistryObject<Item> GLASS_VIAL = ITEMS.register("glass_vial", () -> new Item(new Item.Properties()));
-
+    public static final RegistryObject<Item> GLASS_VIAL = ITEMS.register("glass_vial",
+            () -> new com.diggydwarff.herbalistmod.items.custom.GlassVial(new Item.Properties()));
 
     public static final RegistryObject<Item> AXOLOTL_VENOM = ITEMS.register("axolotl_venom", () -> new Item(new Item.Properties().food(ModFoods.AXOLOTL_VENOM_FOOD).stacksTo(1)));
 

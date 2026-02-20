@@ -1,18 +1,8 @@
 {
   "tropic_herb": {
-    "sounds": [
-      {
-        "name": "herbalistmod:tropic_herb",
-        "stream": true
-      }
-    ]
+    "sounds": [ { "name": "herbalistmod:tropic_herb", "stream": true } ]
   },
   "prism": {
-    "sounds": [
-      {
-        "name": "herbalistmod:prism",
-        "stream": true
-      }
-    ]
+    "sounds": [ { "name": "herbalistmod:prism", "stream": true } ]
   }
 }

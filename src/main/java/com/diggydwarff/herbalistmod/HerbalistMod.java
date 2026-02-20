@@ -55,6 +55,9 @@ public class HerbalistMod
 
     public static final FractalEffectRenderer FRACTAL_EFFECT_RENDERER = new FractalEffectRenderer();
 
+    public static final RealityBendEffectRenderer REALITY_BEND = new RealityBendEffectRenderer();
+
+
     public HerbalistMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
