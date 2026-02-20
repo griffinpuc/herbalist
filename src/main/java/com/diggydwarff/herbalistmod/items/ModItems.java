@@ -6,6 +6,7 @@ import com.diggydwarff.herbalistmod.items.custom.*;
 import com.diggydwarff.herbalistmod.sound.ModSounds;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.RecordItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -16,14 +17,29 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, HerbalistMod.MODID);
 
-    public static final RegistryObject<Item> MUSIC_DISC_TROPIC_HERB = ITEMS.register("music_disc_tropic_herb",
-            () -> new RecordItem(6, ModSounds.TROPIC_HERB, new Item.Properties().stacksTo(1), 3920));
+    public static final RegistryObject<Item> MUSIC_DISC_PRISM =
+            ITEMS.register("music_disc_prism",
+                    () -> new RecordItem(
+                            7,
+                            ModSounds.PRISM,
+                            new Item.Properties()
+                                    .stacksTo(1)
+                                    .rarity(Rarity.RARE),
+                            3920
+                    )
+            );
 
-    public static final RegistryObject<Item> MUSIC_DISC_PRISM = ITEMS.register("music_disc_prism",
-            () -> new RecordItem(6, ModSounds.PRISM, new Item.Properties().stacksTo(1), 3920));
-
-    //public static final RegistryObject<Item> ROLLING_PAPER = ITEMS.register("rolling_paper", () -> new RollingPaperItem(new Item.Properties()));
-
+    public static final RegistryObject<Item> MUSIC_DISC_TROPIC_HERB =
+            ITEMS.register("music_disc_tropic_herb",
+                    () -> new RecordItem(
+                            7,
+                            ModSounds.TROPIC_HERB,
+                            new Item.Properties()
+                                    .stacksTo(1)
+                                    .rarity(Rarity.RARE),
+                            3920
+                    )
+            );
     public static final RegistryObject<Item> BLAZEBUD_CIGAR = ITEMS.register("blazebud_cigar",
             () -> new BlazebudCigarItem(new Item.Properties().durability(100)));
 
