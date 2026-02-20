@@ -1,5 +1,6 @@
 package com.diggydwarff.herbalistmod.client.trip.primitive.datadriven;
 
+import com.diggydwarff.herbalistmod.client.trip.TripAudioBus;
 import com.diggydwarff.herbalistmod.client.trip.TripState;
 import com.diggydwarff.herbalistmod.client.trip.primitive.Primitive;
 import com.diggydwarff.herbalistmod.client.trip.primitive.PrimitiveInstance;
@@ -17,6 +18,10 @@ public final class DataDrivenFogPrimitive implements Primitive {
     @Override
     public void onFogColor(TripState state, ViewportEvent.ComputeFogColor e, PrimitiveInstance inst) {
         float strength = clamp01(inst.get("strength", 0.6f)) * clamp01(state.intensity);
+
+        float audio = TripAudioBus.energy(); // 0..1
+        float audioBoost = inst.get("audioBoost", 0.0f); // per primitive control
+        strength *= (1.0f + audio * audioBoost);
 
         float speed = Math.max(0.01f, inst.get("speed", 0.6f));
         float t = state.ticks * 0.03f * speed;

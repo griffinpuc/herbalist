@@ -1,6 +1,7 @@
 package com.diggydwarff.herbalistmod.client.handler;
 
 import com.diggydwarff.herbalistmod.HerbalistMod;
+import com.diggydwarff.herbalistmod.client.trip.TripAudioBus;
 import com.diggydwarff.herbalistmod.client.trip.TripDirector;
 import com.diggydwarff.herbalistmod.client.trip.TripProfile;
 import com.diggydwarff.herbalistmod.client.trip.TripProfiles;
@@ -69,6 +70,7 @@ public final class TripClientEvents {
             wasActive = active;
         }
 
+        TripAudioBus.tick();
         TripDirector.get().tick(mc);
     }
 

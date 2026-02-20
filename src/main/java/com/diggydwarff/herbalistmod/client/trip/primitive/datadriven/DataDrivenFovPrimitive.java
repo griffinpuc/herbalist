@@ -1,5 +1,6 @@
 package com.diggydwarff.herbalistmod.client.trip.primitive.datadriven;
 
+import com.diggydwarff.herbalistmod.client.trip.TripAudioBus;
 import com.diggydwarff.herbalistmod.client.trip.TripState;
 import com.diggydwarff.herbalistmod.client.trip.primitive.*;
 import net.minecraftforge.client.event.ViewportEvent;
@@ -16,6 +17,10 @@ public final class DataDrivenFovPrimitive implements Primitive, FovHook {
     public void onFov(TripState state, ViewportEvent.ComputeFov event, PrimitiveInstance inst) {
         float strength = clamp01(inst.get("strength", 0.6f)) * clamp01(state.intensity);
         if (strength < 0.02f) return;
+
+        float audio = TripAudioBus.energy(); // 0..1
+        float audioBoost = inst.get("audioBoost", 0.0f); // per primitive control
+        strength *= (1.0f + audio * audioBoost);
 
         float speed = Math.max(0.01f, inst.get("speed", 0.6f));
         float t = state.ticks * 0.02f * speed;

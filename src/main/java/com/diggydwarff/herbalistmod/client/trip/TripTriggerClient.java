@@ -58,6 +58,7 @@ public final class TripTriggerClient {
 
         wasActive = active;
 
+        TripAudioBus.tick();
         TripDirector.get().tick(mc);
 
     }

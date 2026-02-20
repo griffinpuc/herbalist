@@ -1,5 +1,6 @@
 package com.diggydwarff.herbalistmod.client.trip.primitive.datadriven;
 
+import com.diggydwarff.herbalistmod.client.trip.TripAudioBus;
 import com.diggydwarff.herbalistmod.client.trip.TripContext;
 import com.diggydwarff.herbalistmod.client.trip.TripState;
 import com.diggydwarff.herbalistmod.client.trip.primitive.Primitive;
@@ -27,6 +28,10 @@ public final class DataDrivenAudioPrimitive implements Primitive {
 
         float strength = clamp01(inst.get("strength", 0.6f)) * clamp01(state.intensity);
         if (strength < 0.2f) return;
+
+        float audio = TripAudioBus.energy(); // 0..1
+        float audioBoost = inst.get("audioBoost", 0.0f); // per primitive control
+        strength *= (1.0f + audio * audioBoost);
 
         String mode = (def.audioMode == null || def.audioMode.isBlank()) ? "scatter" : def.audioMode;
 

@@ -1,5 +1,6 @@
 package com.diggydwarff.herbalistmod.client.trip.primitive.datadriven;
 
+import com.diggydwarff.herbalistmod.client.trip.TripAudioBus;
 import com.diggydwarff.herbalistmod.client.trip.TripContext;
 import com.diggydwarff.herbalistmod.client.trip.TripParticleBudget;
 import com.diggydwarff.herbalistmod.client.trip.TripState;
@@ -38,6 +39,10 @@ public final class DataDrivenEntityParticlePrimitive implements Primitive {
 
         float strength = clamp01(inst.get("strength", 0.6f)) * clamp01(state.intensity);
         if (strength < 0.15f) return;
+
+        float audio = TripAudioBus.energy(); // 0..1
+        float audioBoost = inst.get("audioBoost", 0.0f); // per primitive control
+        strength *= (1.0f + audio * audioBoost);
 
         // Movement-aware density control (less while moving)
         double hSpeed = mc.player.getDeltaMovement().horizontalDistance();
