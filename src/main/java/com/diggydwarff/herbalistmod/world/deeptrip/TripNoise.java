@@ -3,28 +3,26 @@ package com.diggydwarff.herbalistmod.world.deeptrip;
 import net.minecraft.util.Mth;
 
 public final class TripNoise {
-
     private TripNoise() {}
 
-    // Public entry point
-    public static float fbm(long seed, float x, float z) {
-        float amplitude = 1f;
-        float frequency = 0.0055f;   // large hills
+    public static float fbm(long seed, float x, float z,
+                            float baseFreq, int octaves,
+                            float lacunarity, float persistence) {
+        float amp = 1f;
+        float freq = baseFreq;
         float sum = 0f;
         float norm = 0f;
 
-        for (int i = 0; i < 4; i++) {
-            sum += amplitude * valueNoise(seed + i * 1013L, x * frequency, z * frequency);
-            norm += amplitude;
-
-            amplitude *= 0.5f;
-            frequency *= 2.0f;
+        for (int i = 0; i < octaves; i++) {
+            sum += amp * valueNoise(seed + i * 1013L, x * freq, z * freq);
+            norm += amp;
+            amp *= persistence;
+            freq *= lacunarity;
         }
 
         return sum / norm; // ~0..1
     }
 
-    // Base 2D value noise
     private static float valueNoise(long seed, float x, float z) {
         int x0 = Mth.floor(x);
         int z0 = Mth.floor(z);

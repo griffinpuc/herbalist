@@ -6,6 +6,7 @@ import com.diggydwarff.herbalistmod.effect.ModEffects;
 import com.diggydwarff.herbalistmod.client.screen.ExtractionStandScreen;
 import com.diggydwarff.herbalistmod.client.screen.ModMenuTypes;
 import com.diggydwarff.herbalistmod.events.EntityEvents;
+import com.diggydwarff.herbalistmod.network.PacketHandeler;
 import com.diggydwarff.herbalistmod.sound.ModSounds;
 import com.diggydwarff.herbalistmod.villager.ModVillagerTrades;
 import com.diggydwarff.herbalistmod.world.HerbalistBiomeModifier;
@@ -92,6 +93,7 @@ public class HerbalistMod
     {
         //MinecraftForge.EVENT_BUS.register(new EntityEvents());
         event.enqueueWork(ModVillagers::registerPOIs);
+        event.enqueueWork(() -> PacketHandeler.register());
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

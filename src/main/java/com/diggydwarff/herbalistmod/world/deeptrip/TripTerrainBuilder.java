@@ -3,10 +3,6 @@ package com.diggydwarff.herbalistmod.world.deeptrip;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
-import net.minecraft.util.RandomSource;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.animal.Sheep;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.HashMap;
@@ -16,8 +12,6 @@ import java.util.UUID;
 public final class TripTerrainBuilder {
 
     private static final Map<UUID, Job> JOBS = new HashMap<>();
-
-    // Higher = faster generation, more spikes.
     private static final int COLUMNS_PER_TICK = 1800;
 
     private TripTerrainBuilder() {}
@@ -25,18 +19,13 @@ public final class TripTerrainBuilder {
     public static void start(UUID sessionKey,
                              ServerLevel level,
                              BlockPos center,
-                             long seed,
+                             TripProfile profile,
                              int radius,
-                             int baseY,
-                             TripTheme theme) {
-        JOBS.put(sessionKey, new Job(level, center, seed, radius, baseY, theme));
+                             int baseY) {
+        JOBS.put(sessionKey, new Job(level, center, profile, radius, baseY));
 
         // Ensure center exists immediately
-        buildOneColumn(level, center.getX(), center.getZ(), center, seed, radius, baseY, theme);
-    }
-
-    public static boolean isRunning(UUID sessionKey) {
-        return JOBS.containsKey(sessionKey);
+        buildOneColumn(level, center.getX(), center.getZ(), center, profile, radius, baseY);
     }
 
     public static void tick() {
@@ -50,16 +39,14 @@ public final class TripTerrainBuilder {
                 int x = job.nextX();
                 int z = job.nextZ();
 
-                buildOneColumn(job.level, x, z, job.center, job.seed, job.radius, job.baseY, job.theme);
+                buildOneColumn(job.level, x, z, job.center, job.profile, job.radius, job.baseY);
 
                 job.advance();
                 done++;
             }
 
             if (!job.hasNext()) {
-                // one-time phase after terrain completes
-                decorate(job);
-                spawnMobs(job);
+                TripDecorations.decorate(job.level, job.center, job.profile, job.radius, job.baseY);
                 it.remove();
             }
         }
@@ -68,10 +55,9 @@ public final class TripTerrainBuilder {
     private static void buildOneColumn(ServerLevel level,
                                        int x, int z,
                                        BlockPos center,
-                                       long seed,
+                                       TripProfile profile,
                                        int radius,
-                                       int baseY,
-                                       TripTheme theme) {
+                                       int baseY) {
 
         int dx = x - center.getX();
         int dz = z - center.getZ();
@@ -79,111 +65,57 @@ public final class TripTerrainBuilder {
         float dist = Mth.sqrt(dx * dx + dz * dz);
         float d = Mth.clamp(dist / (float) radius, 0f, 1f);
 
-        // Real seeded noise 0..1
-        float n = TripNoise.fbm(seed, x, z);
+        TripProfile.TerrainParams tp = profile.terrain;
 
-        // Hills
-        float hills = (n - 0.5f) * 36.0f; // +-18
+        // main hills (0..1)
+        float n = TripNoise.fbm(profile.seed, x, z, tp.baseFreq(), tp.octaves(), tp.lacunarity(), tp.persistence());
+        float hills = (n - 0.5f) * tp.hillsAmp();
 
-        // Valley: lower near center
-        float valley = (1f - d) * 12.0f;
+        // extra high-frequency detail
+        float n2 = TripNoise.fbm(profile.seed ^ 0xC0FFEE, x, z,
+                tp.baseFreq() * 3.2f, Math.max(2, tp.octaves() - 1),
+                tp.lacunarity(), tp.persistence());
+        float detail = (n2 - 0.5f) * tp.detailAmp();
 
-        // Rim wall near border
-        float inner = 0.72f;
-        float t = Mth.clamp((d - inner) / (1f - inner), 0f, 1f);
-        float wall = smoothstep(t) * 42.0f;
+        // valley lower near center
+        float valley = (1f - d) * tp.valleyDepth() * tp.bowlStrength();
 
-        int height = baseY + Math.round(hills - valley + wall);
-        height = Mth.clamp(height, baseY - 12, baseY + 72);
+        // rim wall near border
+        float t = Mth.clamp((d - tp.wallStart()) / (1f - tp.wallStart()), 0f, 1f);
+        float wall = smoothstep(t) * tp.wallHeight();
 
-        // Force chunk load
+        int height = baseY + Math.round(hills + detail - valley + wall);
+        height = Mth.clamp(height, baseY - 18, baseY + 90);
+
         level.getChunk(x >> 4, z >> 4);
 
-        int minY = baseY - 20;
+        TripProfile.Palette pal = profile.palette;
+
+        int minY = baseY - 24;
 
         for (int y = minY; y <= height; y++) {
             int depth = height - y;
 
             BlockState state;
-            if (depth == 0) state = theme.surface();
-            else if (depth <= 4) state = theme.subsurface();
-            else state = theme.stone();
+            if (depth == 0) state = pal.surface();
+            else if (depth <= 4) state = pal.subsurface();
+            else state = pal.stone();
 
             level.setBlock(new BlockPos(x, y, z), state, 2);
         }
-    }
 
-    private static void decorate(Job job) {
-        RandomSource r = RandomSource.create(job.seed ^ 9999L);
-
-        // Keep this moderate; it’s one-time and can spike if huge.
-        int attempts = job.radius * 3;
-
-        for (int i = 0; i < attempts; i++) {
-            int x = job.center.getX() + r.nextInt(-job.radius, job.radius + 1);
-            int z = job.center.getZ() + r.nextInt(-job.radius, job.radius + 1);
-
-            // Stay inside circle
-            int dx = x - job.center.getX();
-            int dz = z - job.center.getZ();
-            if (dx * dx + dz * dz > job.radius * job.radius) continue;
-
-            int y = findTop(job.level, x, z, job.baseY + 120);
-
-            if (r.nextFloat() < job.theme.weirdness()) {
-                // Accent spikes
-                int h = r.nextInt(3, 9);
-                for (int j = 0; j < h; j++) {
-                    job.level.setBlock(new BlockPos(x, y + j, z), job.theme.accent(), 2);
-                }
-            } else {
-                // Simple tree. Later: theme-specific trees.
-                int trunk = r.nextInt(3, 6);
-                for (int j = 0; j < trunk; j++) {
-                    job.level.setBlock(new BlockPos(x, y + j, z), Blocks.OAK_LOG.defaultBlockState(), 2);
-                }
-                job.level.setBlock(new BlockPos(x, y + trunk, z), Blocks.OAK_LEAVES.defaultBlockState(), 2);
-            }
+        // sparse accent freckles on the surface
+        if (depthHash(profile.seed, x, z) % 47 == 0) {
+            level.setBlock(new BlockPos(x, height + 1, z), pal.accent(), 2);
         }
     }
 
-    private static void spawnMobs(Job job) {
-        RandomSource r = RandomSource.create(job.seed ^ 5555L);
-
-        for (var entry : job.theme.mobs()) {
-            int count = r.nextInt(entry.minCount(), entry.maxCount() + 1);
-
-            for (int i = 0; i < count; i++) {
-                int x = job.center.getX() + r.nextInt(-job.radius, job.radius + 1);
-                int z = job.center.getZ() + r.nextInt(-job.radius, job.radius + 1);
-
-                int dx = x - job.center.getX();
-                int dz = z - job.center.getZ();
-                if (dx * dx + dz * dz > job.radius * job.radius) continue;
-
-                int y = findTop(job.level, x, z, job.baseY + 120);
-
-                Entity e = entry.type().create(job.level);
-                if (e == null) continue;
-
-                e.moveTo(x + 0.5, y, z + 0.5, r.nextFloat() * 360f, 0);
-
-                if (e instanceof Sheep sheep && entry.sheepColor() != null) {
-                    sheep.setColor(entry.sheepColor());
-                }
-
-                job.level.addFreshEntity(e);
-            }
-        }
-    }
-
-    private static int findTop(ServerLevel level, int x, int z, int startY) {
-        for (int y = startY; y > -64; y--) {
-            if (!level.getBlockState(new BlockPos(x, y, z)).isAir()) {
-                return y + 1;
-            }
-        }
-        return startY;
+    private static int depthHash(long seed, int x, int z) {
+        long h = seed ^ (x * 73428767L) ^ (z * 912931L);
+        h ^= (h >>> 33);
+        h *= 0xff51afd7ed558ccdL;
+        h ^= (h >>> 33);
+        return (int) h;
     }
 
     private static float smoothstep(float t) {
@@ -193,22 +125,20 @@ public final class TripTerrainBuilder {
     private static final class Job {
         final ServerLevel level;
         final BlockPos center;
-        final long seed;
+        final TripProfile profile;
         final int radius;
         final int baseY;
-        final TripTheme theme;
 
         private int x;
         private int z;
         private final int minX, maxX, minZ, maxZ;
 
-        Job(ServerLevel level, BlockPos center, long seed, int radius, int baseY, TripTheme theme) {
+        Job(ServerLevel level, BlockPos center, TripProfile profile, int radius, int baseY) {
             this.level = level;
             this.center = center;
-            this.seed = seed;
+            this.profile = profile;
             this.radius = radius;
             this.baseY = baseY;
-            this.theme = theme;
 
             this.minX = center.getX() - radius;
             this.maxX = center.getX() + radius;

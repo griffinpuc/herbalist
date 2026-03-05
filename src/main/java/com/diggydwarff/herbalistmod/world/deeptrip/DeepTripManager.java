@@ -1,5 +1,7 @@
 package com.diggydwarff.herbalistmod.world.deeptrip;
 
+import com.diggydwarff.herbalistmod.network.PacketHandeler;
+import com.diggydwarff.herbalistmod.network.TripTransitionS2CPacket;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceKey;
@@ -13,12 +15,21 @@ import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.network.PacketDistributor;
 
 import java.util.UUID;
 
 public final class DeepTripManager {
     private static final String TAG_ROOT = "herbalistmod_deeptrip";
     private static final int REGION_SPACING = 1024;
+    private static final String TAG_TRANSITIONING = "deepTripTransitioning";
+
+    private static boolean isTransitioning(ServerPlayer p) {
+        return p.getPersistentData().getBoolean(TAG_TRANSITIONING);
+    }
+    private static void setTransitioning(ServerPlayer p, boolean v) {
+        p.getPersistentData().putBoolean(TAG_TRANSITIONING, v);
+    }
 
     private DeepTripManager() {}
 
@@ -26,7 +37,7 @@ public final class DeepTripManager {
         return player.getPersistentData().contains(TAG_ROOT);
     }
 
-    public static void enter(ServerPlayer player) {
+    public static void enterInternal(ServerPlayer player) {
         if (isActive(player)) return;
 
         MinecraftServer server = player.server;
@@ -63,7 +74,7 @@ public final class DeepTripManager {
         trip.getWorldBorder().setSize(128.0);
 
         long seed = RandomSource.create().nextLong();
-        int radius = 112;
+        int radius = 75;
         int baseY = 80;
 
         root.putLong("seed", seed);
@@ -75,9 +86,12 @@ public final class DeepTripManager {
 
         BlockPos center = new BlockPos(baseX, baseY, baseZ);
 
-        // start terrain job keyed per-player (or per-session if you add session ids)
-        TripTheme theme = TripTheme.fromSeed(seed, null);
-        TripTerrainBuilder.start(player.getUUID(), trip, center, seed, radius, baseY, theme);
+        trip.getWorldBorder().setCenter(baseX + 0.5, baseZ + 0.5);
+        trip.getWorldBorder().setSize((radius * 2) + 24);
+
+        TripProfile profile = TripProfile.fromSeed(seed);
+
+        TripTerrainBuilder.start(player.getUUID(), trip, center, profile, radius, baseY);
 
         // landing target (center)
         root.putInt("landingY", baseY + 2);
@@ -87,11 +101,45 @@ public final class DeepTripManager {
         player.getPersistentData().put(TAG_ROOT, root);
 
         // teleport high
-        double startY = baseY + 120;
+        double startY = baseY + 20;
         player.teleportTo(trip, baseX + 0.5, startY, baseZ + 0.5, player.getYRot(), player.getXRot());
     }
 
-    public static void exit(ServerPlayer player) {
+    public static void requestEnter(ServerPlayer player) {
+        if (isActive(player)) return;
+        if (isTransitioning(player)) return;
+        setTransitioning(player, true);
+
+        long seed = computeSeedForPlayer(player);
+        long sessionId = seed;
+
+        PacketHandeler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> player),
+                new TripTransitionS2CPacket(true, 12, 30, 15, true, seed, sessionId));
+
+        DeepTripTransitionQueue.scheduleEnter(player, 14);
+        setTransitioning(player, false);
+    }
+
+    public static void requestExit(ServerPlayer player) {
+        if (!isActive(player)) return;
+        if (isTransitioning(player)) return;
+        setTransitioning(player, true);
+
+        PacketHandeler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> player),
+                new TripTransitionS2CPacket(false, 10, 12, 10, true, 0L, 0L));
+
+        DeepTripTransitionQueue.scheduleExit(player, 10);
+        setTransitioning(player, false);
+    }
+
+    private static long computeSeedForPlayer(ServerPlayer player) {
+        long w = player.serverLevel().getSeed();
+        long u = player.getUUID().getMostSignificantBits();
+        long v = player.getUUID().getLeastSignificantBits();
+        return w ^ u ^ (v * 31L);
+    }
+
+    public static void exitInternal(ServerPlayer player) {
         CompoundTag pd = player.getPersistentData();
         if (!pd.contains(TAG_ROOT)) return;
 

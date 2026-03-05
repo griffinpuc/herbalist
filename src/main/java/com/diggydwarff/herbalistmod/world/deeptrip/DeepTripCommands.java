@@ -21,8 +21,14 @@ public final class DeepTripCommands {
                                 ctx.getSource().sendFailure(Component.literal("Already in deep trip."));
                                 return 0;
                             }
-                            DeepTripManager.enter(p);
-                            ctx.getSource().sendSuccess(() -> Component.literal("Entered deep trip."), false);
+
+                            // NEW: requestEnter instead of enter
+                            DeepTripManager.requestEnter(p);
+
+                            ctx.getSource().sendSuccess(
+                                    () -> Component.literal("Entering deep trip..."),
+                                    false
+                            );
                             return 1;
                         }))
                         .then(Commands.literal("exit").executes(ctx -> {
@@ -31,8 +37,14 @@ public final class DeepTripCommands {
                                 ctx.getSource().sendFailure(Component.literal("Not in deep trip."));
                                 return 0;
                             }
-                            DeepTripManager.exit(p);
-                            ctx.getSource().sendSuccess(() -> Component.literal("Exited deep trip."), false);
+
+                            // NEW: requestExit instead of exit
+                            DeepTripManager.requestExit(p);
+
+                            ctx.getSource().sendSuccess(
+                                    () -> Component.literal("Exiting deep trip..."),
+                                    false
+                            );
                             return 1;
                         }))
         );
