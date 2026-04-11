@@ -1,0 +1,1 @@
+{"id":"entity.orbit.enchanted_hit","type":"entity_particles","tag":"ENTITY","major":false,"weight":0.2,"particle":"minecraft:enchanted_hit","entityPattern":"orbit","entityMax":10,"entityRadius":1.0,"minSpeed":0.25,"maxSpeed":1.2}

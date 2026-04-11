@@ -1,0 +1,1 @@
+{"id":"world.minor_cloud_27","type":"particles","tag":"WORLD","major":false,"weight":0.5,"particle":"minecraft:end_rod","pattern":"cloud","minCount":8,"maxCount":30,"radius":16.0,"yMin":0.0,"yMax":8.0}

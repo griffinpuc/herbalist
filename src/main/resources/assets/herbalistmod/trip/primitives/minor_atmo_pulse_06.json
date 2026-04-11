@@ -1,0 +1,1 @@
+{"id":"atmo.minor_pulse_06","type":"fog","tag":"ATMOSPHERE","major":false,"weight":0.55,"fogMode":"pulse","colorA":[0.55,0.95,0.1],"colorB":[0.1,0.55,0.05],"minSpeed":0.2,"maxSpeed":1.0}

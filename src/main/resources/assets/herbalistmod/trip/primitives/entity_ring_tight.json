@@ -1,0 +1,1 @@
+{"id":"entity.ring_tight","type":"entity_particles","tag":"ENTITY","weight":0.18,"entityPattern":"ring","entityMax":10,"entityRadius":0.8,"minSpeed":0.35,"maxSpeed":1.1,"minStrength":0.25,"maxStrength":1.0}

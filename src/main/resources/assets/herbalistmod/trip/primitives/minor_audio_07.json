@@ -1,0 +1,1 @@
+{"id":"audio.minor_07","type":"audio","tag":"AUDIO","major":false,"weight":0.4,"sound":"minecraft:entity.phantom.flap","minDelayTicks":120,"maxDelayTicks":260,"volMin":0.25,"volMax":0.75,"pitchMin":0.65,"pitchMax":1.2,"soundRadius":90.0}

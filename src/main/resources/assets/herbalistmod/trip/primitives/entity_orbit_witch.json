@@ -1,0 +1,1 @@
+{"id":"entity.orbit.witch","type":"entity_particles","tag":"ENTITY","major":false,"weight":0.2,"particle":"minecraft:witch","entityPattern":"orbit","entityMax":10,"entityRadius":1.0,"minSpeed":0.25,"maxSpeed":1.2}

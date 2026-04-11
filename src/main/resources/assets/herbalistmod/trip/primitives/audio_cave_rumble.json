@@ -1,0 +1,1 @@
+{"id":"audio.cave_rumble","type":"audio","tag":"AUDIO","weight":0.1,"sound":"minecraft:ambient.cave","minDelayTicks":180,"maxDelayTicks":480,"volMin":0.35,"volMax":0.9,"pitchMin":0.65,"pitchMax":1.0,"soundRadius":110.0}

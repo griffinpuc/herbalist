@@ -1,0 +1,1 @@
+{"id":"entity.afterimage.witch","type":"entity_particles","tag":"ENTITY","major":true,"weight":0.2,"particle":"minecraft:witch","entityPattern":"afterimage","entityMax":14,"entityRadius":1.4,"minSpeed":0.25,"maxSpeed":1.2}

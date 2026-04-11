@@ -1,0 +1,1 @@
+{"id":"audio.minor_04","type":"audio","tag":"AUDIO","major":false,"weight":0.35,"sound":"minecraft:entity.enderman.stare","minDelayTicks":120,"maxDelayTicks":320,"volMin":0.18,"volMax":0.35,"pitchMin":0.8,"pitchMax":1.05,"soundRadius":110.0}

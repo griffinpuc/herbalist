@@ -1,0 +1,1 @@
+{"id":"world.endrod_ring","type":"particles","tag":"WORLD","weight":0.18,"particle":"minecraft:end_rod","pattern":"ring","minCount":6,"maxCount":22,"minSpeed":0.25,"maxSpeed":1.0,"minStrength":0.25,"maxStrength":1.0}

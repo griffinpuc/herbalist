@@ -1,0 +1,1 @@
+{"id":"audio.call_response.entity_warden_heartbeat","type":"audio","tag":"AUDIO","major":true,"weight":0.18,"sound":"minecraft:entity.warden.heartbeat","audioMode":"call_response","minDelayTicks":80,"maxDelayTicks":240,"volMin":0.25,"volMax":0.9,"pitchMin":0.7,"pitchMax":1.35,"soundRadius":70}

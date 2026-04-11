@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "herbalistmod:item/redstone_charge_seeds"
+  }
+}

@@ -1,0 +1,1 @@
+{"id":"audio.scatter.entity_phantom_ambient","type":"audio","tag":"AUDIO","major":false,"weight":0.12,"sound":"minecraft:entity.phantom.ambient","audioMode":"scatter","minDelayTicks":140,"maxDelayTicks":520,"volMin":0.25,"volMax":0.9,"pitchMin":0.7,"pitchMax":1.35,"soundRadius":70}

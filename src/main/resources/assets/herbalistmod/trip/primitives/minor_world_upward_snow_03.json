@@ -1,0 +1,1 @@
+{"id":"world.minor_upward_snow_03","type":"particles","tag":"WORLD","major":false,"weight":0.35,"particle":"minecraft:falling_obsidian_tear","pattern":"upward_snow","minCount":5,"maxCount":26,"radius":14.0,"yMin":0.0,"yMax":6.0}

@@ -1,0 +1,1 @@
+{"id":"world.spore_horizon","type":"particles","tag":"WORLD","weight":0.16,"particle":"minecraft:spore_blossom_air","pattern":"horizon_blob","minCount":4,"maxCount":16,"radius":12.0,"minStrength":0.25,"maxStrength":1.0}

@@ -1,0 +1,24 @@
+{
+  "targets": ["swap"],
+  "passes": [
+    {
+      "name": "herbalistmod:deeptrip_colorgrade",
+      "intarget": "minecraft:main",
+      "outtarget": "swap",
+      "uniforms": [
+        { "name": "Time",          "values": [0.0] },
+        { "name": "HueShift",      "values": [0.0] },
+        { "name": "HueDriftSpeed", "values": [0.0] },
+        { "name": "Saturation",    "values": [1.0] },
+        { "name": "Contrast",      "values": [1.0] },
+        { "name": "Exposure",      "values": [1.0] },
+        { "name": "Vignette",      "values": [0.0] }
+      ]
+    },
+    {
+      "name": "minecraft:blit",
+      "intarget": "swap",
+      "outtarget": "minecraft:main"
+    }
+  ]
+}

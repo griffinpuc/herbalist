@@ -6,6 +6,7 @@ import com.diggydwarff.herbalistmod.effect.ModEffects;
 import com.diggydwarff.herbalistmod.client.screen.ExtractionStandScreen;
 import com.diggydwarff.herbalistmod.client.screen.ModMenuTypes;
 import com.diggydwarff.herbalistmod.events.EntityEvents;
+import com.diggydwarff.herbalistmod.network.PacketHandeler;
 import com.diggydwarff.herbalistmod.sound.ModSounds;
 import com.diggydwarff.herbalistmod.villager.ModVillagerTrades;
 import com.diggydwarff.herbalistmod.world.HerbalistBiomeModifier;
@@ -51,6 +52,13 @@ public class HerbalistMod
 
     public static final AmpedEffectRenderer AMPED_EFFECT_RENDERER = new AmpedEffectRenderer();
 
+    public static final AcidEffectRenderer ACID_EFFECT_RENDERER = new AcidEffectRenderer();
+
+    public static final FractalEffectRenderer FRACTAL_EFFECT_RENDERER = new FractalEffectRenderer();
+
+    public static final RealityBendEffectRenderer REALITY_BEND = new RealityBendEffectRenderer();
+
+
     public HerbalistMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -84,6 +92,8 @@ public class HerbalistMod
     private void commonSetup(final FMLCommonSetupEvent event)
     {
         //MinecraftForge.EVENT_BUS.register(new EntityEvents());
+        event.enqueueWork(ModVillagers::registerPOIs);
+        event.enqueueWork(() -> PacketHandeler.register());
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

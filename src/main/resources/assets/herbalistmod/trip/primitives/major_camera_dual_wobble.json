@@ -1,0 +1,1 @@
+{"id":"camera.major_dual_wobble","type":"fov","tag":"CAMERA","major":true,"weight":0.35,"fovMode":"dual","fovAmp":6.5,"minStrength":0.35,"maxStrength":1.0,"fovAmp2":2.275,"minSpeed":0.18,"maxSpeed":0.9}

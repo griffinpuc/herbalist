@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "herbalistmod:block/extraction_stand"
+    }
+  }
+}

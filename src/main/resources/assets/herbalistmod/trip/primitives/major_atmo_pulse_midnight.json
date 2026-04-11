@@ -1,0 +1,1 @@
+{"id":"atmo.major_pulse_midnight","type":"fog","tag":"ATMOSPHERE","major":true,"weight":0.5,"fogMode":"pulse","colorA":[0.05,0.06,0.2],"colorB":[0.35,0.1,0.45],"minSpeed":0.2,"maxSpeed":0.9,"minStrength":0.35,"maxStrength":1.0}

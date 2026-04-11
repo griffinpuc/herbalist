@@ -9,13 +9,15 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
 
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.util.Arrays;
 import java.util.Set;
 
 @Mod.EventBusSubscriber(modid = HerbalistMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModVillagerSetup {
+
     @SubscribeEvent
     public static void commonSetup(FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
@@ -25,12 +27,16 @@ public class ModVillagerSetup {
                         ModBlocks.EXTRACTION_STAND_BLOCK.get().getStateDefinition().getPossibleStates()
                 );
 
-                Method m = ObfuscationReflectionHelper.findMethod(
-                        PoiTypes.class,
-                        "registerBlockStates",
-                        Holder.class,
-                        Set.class
-                );
+                Method m = Arrays.stream(PoiTypes.class.getDeclaredMethods())
+                        .filter(mm -> Modifier.isStatic(mm.getModifiers()))
+                        .filter(mm -> mm.getParameterCount() == 2)
+                        .filter(mm -> Holder.class.isAssignableFrom(mm.getParameterTypes()[0]))
+                        .filter(mm -> Set.class.isAssignableFrom(mm.getParameterTypes()[1]))
+                        .findFirst()
+                        .orElseThrow(() -> new NoSuchMethodException(
+                                "Could not find PoiTypes.*(Holder, Set) method"
+                        ));
+
                 m.setAccessible(true);
                 m.invoke(null, holder, states);
 

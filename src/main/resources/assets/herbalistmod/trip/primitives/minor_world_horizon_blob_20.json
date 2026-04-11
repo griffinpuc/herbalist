@@ -1,0 +1,1 @@
+{"id":"world.minor_horizon_blob_20","type":"particles","tag":"WORLD","major":false,"weight":0.4,"particle":"minecraft:falling_obsidian_tear","pattern":"horizon_blob","minCount":5,"maxCount":32,"radius":14.0,"yMin":0.0,"yMax":6.0}

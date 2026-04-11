@@ -1,0 +1,1 @@
+{"id":"atmo.major_tint_rose","type":"fog","tag":"ATMOSPHERE","major":true,"weight":0.55,"fogMode":"tint","colorA":[0.85,0.25,0.45],"minStrength":0.35,"maxStrength":1.0}

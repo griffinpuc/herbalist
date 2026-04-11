@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "herbalistmod:item/axolotl_venom_dust"
+  }
+}

@@ -1,0 +1,1 @@
+{"id":"particles.ground_crawl.ash","type":"particles","tag":"WORLD","major":false,"weight":0.16,"particle":"minecraft:ash","pattern":"ground_crawl","minCount":3,"maxCount":26,"radius":10.0,"yMin":0.0,"yMax":6.0,"minSpeed":0.25,"maxSpeed":1.2}

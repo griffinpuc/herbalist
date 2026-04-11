@@ -1,0 +1,1 @@
+{"id":"world.minor_ring_21","type":"particles","tag":"WORLD","major":false,"weight":0.4,"particle":"minecraft:falling_obsidian_tear","pattern":"ring","minCount":4,"maxCount":31,"radius":16.0,"yMin":0.0,"yMax":10.0}

@@ -1,0 +1,1 @@
+{"id":"world.major_ash_updraft","type":"particles","tag":"WORLD","major":true,"weight":0.45,"particle":"minecraft:ash","pattern":"upward_snow","minCount":10,"maxCount":36,"radius":14.0,"yMin":0.0,"yMax":8.0,"minStrength":0.35,"maxStrength":1.0}

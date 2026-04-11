@@ -1,0 +1,1 @@
+{"id":"particles.spiral.falling_obsidian_tear","type":"particles","tag":"WORLD","major":true,"weight":0.16,"particle":"minecraft:falling_obsidian_tear","pattern":"spiral","minCount":3,"maxCount":26,"radius":10.0,"yMin":0.0,"yMax":6.0,"minSpeed":0.25,"maxSpeed":1.2}
